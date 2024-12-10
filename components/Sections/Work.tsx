@@ -3,7 +3,7 @@ import React from "react";
 const Work = () => {
   return (
     <div
-      className="h-full grid grid-cols-2 bg-gray-100 p-5"
+      className="h-full grid grid-cols-1 sm:grid-cols-2  bg-gray-100 p-5"
       style={{ boxShadow: "0px 4px 10px rgba(100, 100, 200, 150)" }}
     >
       <div>

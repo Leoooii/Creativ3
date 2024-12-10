@@ -20,28 +20,28 @@ export default function CustomCarousel() {
     >
       <Carousel
         infiniteLoop
-        autoPlay={true}
+        autoPlay={false}
         showStatus={false}
         showThumbs={false}
       >
-        <div className="flex gap-10  h-min">
-          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-14">
+        <div className="flex  gap-10 justify-center flex-col  sm:flex-row h-min">
+          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-0 pt-5 sm:p-14 mx-auto">
             <Image alt="creativ-logo" height={300} src={logo} width={300} />
 
             <div className="flex flex-col align-baseline self-start">
-              <h2 className="self-start text-xl font-bold">
+              <h2 className="self-start text-xl font-bold ">
                 Materiale constructii
               </h2>
               <h3 className="self-start">Asiguram transportul</h3>
             </div>
           </div>
-          <div className="w-1/2 flex flex-col justify-center align-middle items-center">
+          <div className="w-1/2 flex flex-col justify-center mx-auto align-middle items-center">
             <Image alt="image1" src={constructi} />
           </div>
         </div>
 
-        <div className="flex gap-10">
-          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-14">
+        <div className="flex  gap-10 justify-center flex-col  sm:flex-row h-min">
+          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-0 pt-5 sm:p-14 mx-auto">
             <Image alt="creativ-logo" height={300} src={logo} width={300} />
             <div className="flex flex-col align-baseline self-start">
               <h2 className="self-start text-xl font-bold">
@@ -50,48 +50,48 @@ export default function CustomCarousel() {
               <h3 className="self-start">Asiguram transportul</h3>
             </div>
           </div>
-          <div className="w-1/2 flex flex-col justify-center align-middle items-center">
+          <div className="w-1/2 flex flex-col justify-center align-middle items-center mx-auto">
             <Image alt="image1" src={metalurgice} />
           </div>
         </div>
-        <div className="flex gap-10">
-          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-14">
+        <div className="flex  gap-10 justify-center flex-col  sm:flex-row h-min">
+          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-0 pt-5 sm:p-14 mx-auto">
             <Image alt="creativ-logo" height={300} src={logo} width={300} />
             <div className="flex flex-col align-baseline self-start">
               <h2 className="self-start text-xl font-bold">Sanitare</h2>
               <h3 className="self-start">Asiguram transportul</h3>
             </div>
           </div>
-          <div className="w-1/2 flex flex-col justify-center align-middle items-center">
+          <div className="w-1/2 flex flex-col justify-center align-middle items-center mx-auto">
             <Image alt="image1" src={sanitare} />
           </div>
         </div>
-        <div className="flex gap-10">
-          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-14">
+        <div className="flex  gap-10 justify-center flex-col  sm:flex-row h-min">
+          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-0 pt-5 sm:p-14 mx-auto">
             <Image alt="creativ-logo" height={300} src={logo} width={300} />
             <div className="flex flex-col align-baseline self-start">
               <h2 className="self-start text-xl font-bold">Unelte</h2>
               <h3 className="self-start">Asiguram transportul</h3>
             </div>
           </div>
-          <div className="w-1/2 flex flex-col justify-center align-middle items-center">
+          <div className="w-1/2 flex flex-col justify-center align-middle items-center mx-auto">
             <Image alt="image1" src={unelte} />
           </div>
         </div>
-        <div className="flex gap-10">
-          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-14">
+        <div className="flex  gap-10 justify-center flex-col  sm:flex-row h-min">
+          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-0 pt-5 sm:p-14 mx-auto">
             <Image alt="creativ-logo" height={300} src={logo} width={300} />
             <div className="flex flex-col align-baseline self-start">
               <h2 className="self-start text-xl font-bold">Electrice</h2>
               <h3 className="self-start">Asiguram transportul</h3>
             </div>
           </div>
-          <div className="w-1/2 flex flex-col justify-center align-middle items-center">
+          <div className="w-1/2 flex flex-col justify-center align-middle items-center mx-auto">
             <Image alt="image1" src={electrice} />
           </div>
         </div>
-        <div className="flex gap-10">
-          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-14">
+        <div className="flex  gap-10 justify-center flex-col  sm:flex-row h-min">
+          <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-0 pt-5 sm:p-14 mx-auto">
             <Image alt="creativ-logo" height={300} src={logo} width={300} />
             <div className="flex flex-col align-baseline self-start">
               <h2 className="self-start text-xl font-bold">
@@ -100,7 +100,7 @@ export default function CustomCarousel() {
               <h3 className="self-start">Asiguram transportul</h3>
             </div>
           </div>
-          <div className="w-1/2 flex flex-col justify-center align-middle items-center">
+          <div className="w-1/2 flex flex-col justify-center align-middle items-center mx-auto">
             <Image alt="image1" src={gradina} />
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function Home() {
       <AboutUs />
       <hr className="border-blue-800" />
       <div className="flex flex-wrap flex-col justify-center  sm:flex-row sm:justify-between gap-5">
-        <div className={"w-2/5"}>
+        <div className={"sm:w-2/5 w-full"}>
           <CustomMotionImage
             alt={"muncitor"}
             left={true}
@@ -23,7 +23,7 @@ export default function Home() {
             duration={1}
           />
         </div>
-        <div className={"w-2/5 mt-20 "}>
+        <div className={"sm:w-2/5 w-full mt-20 "}>
           <CustomMotionImage
             alt={"building"}
             left={false}
