@@ -1,8 +1,39 @@
-
+import ResponsiveCarousel from "@/components/Custom/CustomCarousel";
+import AboutUs from "@/components/Sections/AboutUs";
+import CustomMotionImage from "@/components/Custom/CustomMotionImage";
+import Work from "@/components/Sections/Work";
 
 export default function Home() {
   return (
-    <div >hei
+    <div className="container mx-auto  h-full flex flex-col gap-10 ">
+      <div className="flex mt-5 gap-10 justify-end">
+        <div className={"w-full flex p-2"}>
+          <ResponsiveCarousel />
+        </div>
+      </div>
+      <hr className="border-blue-800" />
+      <AboutUs />
+      <hr className="border-blue-800" />
+      <div className="flex flex-wrap flex-col justify-center  sm:flex-row sm:justify-between gap-5">
+        <div className={"w-2/5"}>
+          <CustomMotionImage
+            alt={"muncitor"}
+            left={true}
+            src={"/images/work.jpg"}
+            duration={1}
+          />
+        </div>
+        <div className={"w-2/5 mt-20 "}>
+          <CustomMotionImage
+            alt={"building"}
+            left={false}
+            src={"/images/creativbuilding.jpg"}
+            duration={2}
+          />
+        </div>
+      </div>
+      <hr className="border-blue-800" />
+      <Work />
     </div>
   );
 }
