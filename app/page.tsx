@@ -1,4 +1,4 @@
-import ResponsiveCarousel from "@/components/Custom/CustomCarousel";
+import CustomCarousel from "@/components/Custom/CustomCarousel";
 import AboutUs from "@/components/Sections/AboutUs";
 import CustomMotionImage from "@/components/Custom/CustomMotionImage";
 import Work from "@/components/Sections/Work";
@@ -8,7 +8,7 @@ export default function Home() {
     <div className="container mx-auto  h-full flex flex-col gap-10 ">
       <div className="flex mt-5 gap-10 justify-end">
         <div className={"w-full flex p-2"}>
-          <ResponsiveCarousel />
+          <CustomCarousel />
         </div>
       </div>
       <hr className="border-blue-800" />

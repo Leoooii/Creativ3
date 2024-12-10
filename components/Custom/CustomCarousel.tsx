@@ -12,7 +12,7 @@ import unelte from "../../public/images/Unelte.jpg";
 import sanitare from "../../public/images/sanitare.jpg";
 import logo from "../../public/images/logo.png";
 
-export default function ResponsiveCarousel() {
+export default function CustomCarousel() {
   return (
     <div
       className={"w-full max-h-fit bg-white"}
