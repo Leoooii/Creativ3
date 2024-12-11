@@ -3,6 +3,8 @@
 import React, { Suspense } from "react";
 import Auth from "@/components/Sections/Auth";
 import { Spinner } from "@nextui-org/spinner";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import CartItems from "@/components/Sections/CartItems";
 
 const Page = () => {
   return (
@@ -13,8 +15,8 @@ const Page = () => {
         </Suspense>
       </div>
       <div className="border-white b-2 rounded-md bg-white p-5 ">
-        {/*<ShoppingCartIcon height={50} width={50} />*/}
-        {/*<CartItems />*/}
+        <ShoppingCartIcon height={50} width={50} />
+        <CartItems />
       </div>
     </div>
   );

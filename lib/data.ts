@@ -73,8 +73,8 @@ export async function fetchCategories() {
 
     return materials.rows.flat();
   } catch (error) {
-    console.error("Failed to fetch materials:", error);
-    throw new Error("Failed to fetch materials");
+    console.log(error);
+    throw new Error("Failed to fetch categories");
   }
 }
 
@@ -97,8 +97,8 @@ export async function addCategory(name: string) {
 
     return { message: "Category added successfully" };
   } catch (error) {
-    console.error("Failed to add material:", error);
-    throw new Error("Failed to add material");
+    console.log(error);
+    throw new Error("Failed to add categories");
   }
 }
 
@@ -126,7 +126,7 @@ export async function fetchMaterialByFilter(filter: string) {
 
     return data.rows;
   } catch (error) {
-    console.log(error, "eroare");
+    console.log(error, "failed to fetchMaterialByFilter");
 
     return null;
   }
@@ -163,7 +163,7 @@ export async function addMaterial(
 
     return { message: "Material added successfully" };
   } catch (error) {
-    console.error("Failed to add material:", error);
+    console.log(error);
     throw new Error("Failed to add material");
   }
 }
@@ -243,8 +243,8 @@ export async function addRequest(
 
     return { message: "Request added successfully", data: data.rows };
   } catch (error) {
-    console.error("Failed to add material:", error);
-    throw new Error("Failed to add material");
+    console.log(error);
+    throw new Error("Failed to add request");
   }
 }
 
@@ -271,12 +271,12 @@ export async function fetchRequests(email: string, filter?: string) {
     }
     const requests = await query;
 
-    console.log(requests.rows.flat(), "2");
-
+    // console.log(requests.rows.flat(), "2");
+    console.log(requests);
     return requests.rows.flat();
   } catch (error) {
-    console.error("Failed to fetch materials:", error);
-    throw new Error("Failed to fetch materials");
+    console.log(error);
+    throw new Error("Failed to fetch requestss");
   }
 }
 
@@ -305,7 +305,7 @@ export async function updateRequest(
 
     return { message: "Material updated successfully" };
   } catch (error) {
-    console.error("Failed to update material:", error);
+    console.log(error);
     throw new Error("Failed to update request");
   }
 }
@@ -324,7 +324,7 @@ export async function deleteRequest(id: number) {
 
     return { message: "Material deleted successfully" };
   } catch (error) {
-    console.error("Failed to delete material:", error);
-    throw new Error("Failed to delete material");
+    console.log(error);
+    throw new Error("Failed to delete request");
   }
 }
