@@ -116,19 +116,16 @@ export async function fetchMaterialById(id: string) {
 
 export async function fetchMaterialByFilter(filter: string) {
   try {
-    // Query-ul pentru a selecta materialul cu ID-ul specificat
     const data = await sql<Material[]>`
-  SELECT * 
-  FROM Materials 
-  WHERE name LIKE ${"%" + filter + "%"}`;
+      SELECT * 
+      FROM Materials 
+      WHERE name LIKE ${"%" + filter + "%"}`;
 
-    // console.log(data.rows, filter)
-
-    return data.rows;
+    // Returnează un singur array de obiecte Material
+    return data.rows.flat(); // Folosește .flat() pentru a plana un array de array-uri
   } catch (error) {
     console.log(error, "failed to fetchMaterialByFilter");
-
-    return null;
+    return []; // Returnează un array gol în caz de eroare
   }
 }
 

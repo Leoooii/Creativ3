@@ -1,16 +1,19 @@
 "use client";
 
 import React from "react";
-import { ShoppingCartIcon } from "@heroicons/react/20/solid";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const ShopingCart = () => {
+  const pathname = usePathname();
+
   return (
     <>
       <div className="relative">
         <Link href={"/auth"}>
           <ShoppingCartIcon
-            className="w-8 hover:cursor-pointer"
+            className={`w-10 hover:cursor-pointer border-b-1  ${pathname === "/auth" ? "border-white-500" : "border-b-0"}`}
             color={"white"}
           />
         </Link>

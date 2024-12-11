@@ -1,8 +1,9 @@
 import { PhoneIcon } from "@heroicons/react/20/solid";
 import { Link } from "@nextui-org/link";
 import CreativLogo from "@/public/Logo";
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import ShopingCart from "@/components/UI/components/ShoppingCart";
+import Catalog from "@/components/UI/components/Catalog";
+import SearchBar from "@/components/UI/components/SearchBar";
 
 export default function Navbar() {
   return (
@@ -18,24 +19,8 @@ export default function Navbar() {
         <CreativLogo />
       </Link>
       <div className="flex items-center  gap-3  flex-row justify-center mx-auto w-1/3">
-        <ShoppingCartIcon
-          className="w-8 hover:cursor-pointer"
-          color={"white"}
-        />
-        <ShoppingCartIcon
-          className="w-8 hover:cursor-pointer"
-          color={"white"}
-        />
-        <ShoppingCartIcon
-          className="w-8 hover:cursor-pointer"
-          color={"white"}
-        />
-        <ShoppingCartIcon
-          className="w-8 hover:cursor-pointer"
-          color={"white"}
-        />
-        {/*<SearchBar />*/}
-        {/*<NavLinks />*/}
+        <SearchBar />
+        <Catalog />
         <ShopingCart />
         {/*<AuthButton />*/}
       </div>
