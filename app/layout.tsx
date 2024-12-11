@@ -4,9 +4,7 @@ import "../public/styles/globals.css";
 import Navbar from "@/components/UI/Navbar";
 import Header from "@/components/UI/Header";
 import Footer from "@/components/UI/Footer";
-import { CounterStoreProvider } from "@/providers/counter-store-provider";
-import { AuthStoreProvider } from "@/providers/auth-store-provider";
-import { CartStoreProvider } from "@/providers/cart-store";
+import { AuthProvider } from "@/providers/auth-store-provider";
 
 export const metadata: Metadata = {
   title: "CreativTub3",
@@ -21,27 +19,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` antialiased md:px-8 px-0 bg-gray-500`}>
-        <AuthStoreProvider>
-          <CartStoreProvider>
-            <div className="flex  flex-col  md:overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500">
-              <div className="w-full flex-none  bg-gray-800">
-                <Navbar />
-              </div>
-              <div className="w-full bg-gray-800">
-                <Header />
-              </div>
-              <div className="flex-grow   w-4/5 mx-auto ">
-                <CounterStoreProvider>
-                  {/*  <Providers>*/}
-                  {children}
-                  {/*  </Providers>*/}
-                  {/*  <ToastContainer />*/}
-                </CounterStoreProvider>
-              </div>
+        <AuthProvider>
+          <div className="flex  flex-col  md:overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500">
+            <div className="w-full flex-none  bg-gray-800">
+              <Navbar />
             </div>
-            <Footer />
-          </CartStoreProvider>
-        </AuthStoreProvider>
+            <div className="w-full bg-gray-800">
+              <Header />
+            </div>
+            <div className="flex-grow   w-4/5 mx-auto ">
+              {/*  <Providers>*/}
+              {children}
+              {/*  </Providers>*/}
+              {/*  <ToastContainer />*/}
+            </div>
+          </div>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -4,19 +4,13 @@ import React from "react";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
-import { useAuthStore } from "@/providers/auth-store-provider";
-import { useCartStore } from "@/providers/cart-store";
+import { useAuth } from "@/providers/auth-store-provider";
 
 const Auth = () => {
-  const user = useAuthStore((state) => state.user);
-  const login = useAuthStore((state) => state.login);
-  const logout = useAuthStore((state) => state.logout);
-  const isAdmin = useAuthStore((state) => state.isAdmin);
-  const { items } = useCartStore();
+  const { user, isAdmin, login, logout } = useAuth();
+  // const { items } = useCartStore();
   const router = useRouter();
 
-  console.log(items);
   const adminText = isAdmin ? "Admin" : "";
 
   return (
