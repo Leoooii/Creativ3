@@ -7,7 +7,7 @@ import { fetchMaterials } from "@/lib/data";
 import MaterialList from "@/components/Sections/MaterialList";
 import PaginationComponent from "@/components/Sections/PaginationComponent";
 
-const Page = () => {
+const CatalogPage = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category"); // Obține valoarea din URL
   const [materials, setMaterials] = useState<Material[]>([]);
@@ -51,6 +51,7 @@ const Page = () => {
   return (
     <div className="flex flex-col p-3 min-h-screen">
       {/* Împachetăm MaterialList în Suspense */}
+      {category}
       <Suspense fallback={<div>Loading materials...</div>}>
         <MaterialList loadMaterials={loadMaterials} materials={materials} />
       </Suspense>
@@ -68,4 +69,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default CatalogPage;
