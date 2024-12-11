@@ -1,9 +1,9 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Category, Material } from "@/lib/definitions";
+import { Material } from "@/lib/definitions";
 import { useDebounce } from "use-debounce";
-import { fetchCategories, fetchMaterials } from "@/lib/data";
+import { fetchMaterials } from "@/lib/data";
 import MaterialList from "@/components/Sections/MaterialList";
 import PaginationComponent from "@/components/Sections/PaginationComponent";
 
@@ -16,7 +16,6 @@ const Page = () => {
   const [numberOfItems, setNumberOfItems] = useState(0);
   const [page, setPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(1);
-  const [categories, setCategories] = useState<Category[]>([]);
 
   const loadMaterials = async () => {
     if (category) {
@@ -45,15 +44,8 @@ const Page = () => {
 
   useEffect(() => {
     loadMaterials();
-    const loadCategories = async () => {
-      try {
-        const fetchedCategories = await fetchCategories();
-        setCategories(fetchedCategories);
-      } catch (error) {
-        console.error("Failed to fetch categories", error);
-      }
-    };
-    loadCategories();
+
+    console.log(category);
   }, [debouncedValue, page, category]);
 
   return (
