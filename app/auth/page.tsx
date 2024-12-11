@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Suspense } from "react";
 import Auth from "@/components/Sections/Auth";
 import { Spinner } from "@nextui-org/spinner";
