@@ -1,14 +1,13 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { Material } from "@/lib/definitions";
 import { useDebounce } from "use-debounce";
 import { fetchMaterials } from "@/lib/data";
 import MaterialList from "@/components/Sections/MaterialList";
 import PaginationComponent from "@/components/Sections/PaginationComponent";
+import UrlParams from "@/components/UI/components/UrlParams";
 
 const CatalogPage = () => {
-  const searchParams = useSearchParams();
   const [category, setCategory] = useState<string | null>("");
 
   const [materials, setMaterials] = useState<Material[]>([]);
@@ -44,9 +43,6 @@ const CatalogPage = () => {
   };
 
   useEffect(() => {
-    const categoryValue = searchParams.get("category");
-    setCategory(categoryValue);
-
     loadMaterials();
 
     console.log(category);
@@ -55,7 +51,10 @@ const CatalogPage = () => {
   return (
     <div className="flex flex-col p-3 min-h-screen">
       {/* Împachetăm MaterialList în Suspense */}
-      {category}
+      <Suspense fallback={<div>Loading url...</div>}>
+        <UrlParams setCategory={setCategory} />
+      </Suspense>
+
       <Suspense fallback={<div>Loading materials...</div>}>
         <MaterialList loadMaterials={loadMaterials} materials={materials} />
       </Suspense>
