@@ -8,13 +8,9 @@ import { fetchCategories, fetchMaterials } from "@/lib/data";
 import MaterialList from "@/components/Sections/MaterialList";
 import PaginationComponent from "@/components/Sections/PaginationComponent";
 
-function Search() {
-  const searchParams = useSearchParams();
-  return searchParams.get("category");
-}
-
 const Page = () => {
-  const category = Search();
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category"); // Obține valoarea din URL
   const [materials, setMaterials] = useState<Material[]>([]);
   const [value] = useState([0, 300]);
   const [debouncedValue] = useDebounce(value, 500);
