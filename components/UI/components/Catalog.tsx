@@ -13,7 +13,7 @@ const Catalog = () => {
       <div className="relative">
         <Link href={"/catalog"}>
           <BookOpenIcon
-            className={`w-10 hover:cursor-pointer ${pathname === "/catalog" ? "border-white-500" : "border-b-0"}`}
+            className={`w-10 hover:cursor-pointer border-b-1 ${pathname === "/catalog" ? "border-white-500" : "border-black"}`}
             color={"white"}
           />
         </Link>

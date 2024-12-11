@@ -51,10 +51,8 @@ const CartItems = () => {
     await fetchData();
   };
   useEffect(() => {
-    loadData().then(() => {
-      console.log("succes");
-    });
-  });
+    loadData();
+  }, []);
 
   return (
     <div className={"p-3 flex flex-col gap-1 mt-5"}>
