@@ -2,6 +2,7 @@ import { PhoneIcon } from "@heroicons/react/20/solid";
 import { Link } from "@nextui-org/link";
 import CreativLogo from "@/public/Logo";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import ShopingCart from "@/components/UI/components/ShoppingCart";
 
 export default function Navbar() {
   return (
@@ -35,7 +36,7 @@ export default function Navbar() {
         />
         {/*<SearchBar />*/}
         {/*<NavLinks />*/}
-        {/*<ShopingCart />*/}
+        <ShopingCart />
         {/*<AuthButton />*/}
       </div>
     </div>
