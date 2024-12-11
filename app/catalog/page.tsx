@@ -9,7 +9,8 @@ import PaginationComponent from "@/components/Sections/PaginationComponent";
 
 const CatalogPage = () => {
   const searchParams = useSearchParams();
-  const category = searchParams.get("category"); // Obține valoarea din URL
+  const [category, setCategory] = useState<string | null>("");
+
   const [materials, setMaterials] = useState<Material[]>([]);
   const [value] = useState([0, 300]);
   const [debouncedValue] = useDebounce(value, 500);
@@ -43,6 +44,9 @@ const CatalogPage = () => {
   };
 
   useEffect(() => {
+    const categoryValue = searchParams.get("category");
+    setCategory(categoryValue);
+
     loadMaterials();
 
     console.log(category);
