@@ -5,6 +5,7 @@ import { Category } from "@/lib/definitions";
 import BreadCrumbBar from "@/components/UI/components/BreadCrumbBar";
 import CustomModal from "@/components/Custom/CustomModal";
 import AddItemForm from "@/components/Forms/AddItemForm";
+import AddCategoryForm from "@/components/Forms/AddCategoryForm";
 
 interface FilterSidebarProps {
   categories: Category[];
@@ -49,15 +50,15 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
     <div>
       {isAdmin && (
         <div className={"flex gap-1"}>
-          <CustomModal buttonName={"Adauga Item"} header={""}>
+          <CustomModal buttonName={"Adauga Item"} header={"Adauga item"}>
             <AddItemForm />
           </CustomModal>
-          {/*  <CustomModal*/}
-          {/*    buttonName={"Adauga Categorie"}*/}
-          {/*    header={"Adauga categorie"}*/}
-          {/*  >*/}
-          {/*    <AddCategoryForm />*/}
-          {/*  </CustomModal>*/}
+          <CustomModal
+            buttonName={"Adauga Categorie"}
+            header={"Adauga categorie"}
+          >
+            <AddCategoryForm />
+          </CustomModal>
         </div>
       )}
     </div>
