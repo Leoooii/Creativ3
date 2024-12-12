@@ -12,8 +12,8 @@ const Auth = () => {
   const router = useRouter();
 
   const adminText = isAdmin ? "Admin" : "";
-  const disconnect = () => {
-    logout().then(() => {
+  const disconnect = async () => {
+    await logout().then(() => {
       console.log("iesire");
       router.push("/");
     });
