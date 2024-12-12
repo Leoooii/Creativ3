@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Button } from "@nextui-org/react";
-import Image from "next/image";
+import { Button, Image } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/providers/auth-store-provider";
+import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 const Auth = () => {
   const { user, isAdmin, login, logout } = useAuth();
@@ -14,14 +14,31 @@ const Auth = () => {
   const adminText = isAdmin ? "Admin" : "";
 
   return (
-    <div className={"mt-5"}>
+    <div>
       {user ? (
-        <div className="flex justify-between ">
-          <div className={"w-2/3 "}>
-            <h1 className={" text-3xl"}>
-              {adminText} {user.displayName}
-            </h1>
-            <h2>{user.email}</h2>
+        <div className="flex justify-around  mx-2">
+          <div className={"w-full flex gap-3"}>
+            {user?.photoURL ? (
+              <>
+                <Image
+                  alt={"profile pic"}
+                  className={"rounded-full size-fit"}
+                  height={80}
+                  src={user.photoURL}
+                  width={100}
+                />
+              </>
+            ) : (
+              <UserCircleIcon className="w-24" />
+            )}
+            <div>
+              <h1 className={" text-3xl"}>
+                {adminText} {user.displayName}
+              </h1>
+              <h2>{user.email}</h2>
+            </div>
+          </div>
+          <div className={" flex justify-center"}>
             <Button
               color={"danger"}
               size={"sm"}
@@ -33,19 +50,6 @@ const Auth = () => {
             >
               Logout
             </Button>
-          </div>
-          <div className={" flex justify-center"}>
-            {user?.photoURL && (
-              <>
-                <Image
-                  alt={"profile pic"}
-                  className={"rounded-full  h-fit"}
-                  height={80}
-                  src={user.photoURL}
-                  width={80}
-                />
-              </>
-            )}
           </div>
         </div>
       ) : (
