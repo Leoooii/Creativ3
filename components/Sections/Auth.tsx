@@ -12,6 +12,12 @@ const Auth = () => {
   const router = useRouter();
 
   const adminText = isAdmin ? "Admin" : "";
+  const disconnect = () => {
+    logout().then(() => {
+      console.log("iesire");
+      router.push("/");
+    });
+  };
 
   return (
     <div>
@@ -39,16 +45,7 @@ const Auth = () => {
             </div>
           </div>
           <div className={" flex justify-center"}>
-            <Button
-              color={"danger"}
-              size={"sm"}
-              onClick={() => {
-                logout().then(() => {
-                  console.log("iesire");
-                  router.push("/");
-                });
-              }}
-            >
+            <Button color={"danger"} size={"sm"} onClick={disconnect}>
               Logout
             </Button>
           </div>
