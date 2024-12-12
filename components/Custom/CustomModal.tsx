@@ -28,16 +28,17 @@ const ModalComponent: React.FC<ModalProps> = ({
 
   return (
     <>
-      <Button color="primary" onPress={onOpen}>
+      <Button color="primary" onPress={onOpen} variant="faded">
         {buttonName}
       </Button>
       <Modal
+        isDismissable={false}
         backdrop="opaque"
         isOpen={isOpen}
         motionProps={{
           variants: {
             enter: {
-              y: -20,
+              y: -5,
               opacity: 1,
               transition: {
                 duration: 0.6,
@@ -45,7 +46,7 @@ const ModalComponent: React.FC<ModalProps> = ({
               },
             },
             exit: {
-              y: 20,
+              y: 25,
               opacity: 0,
               transition: {
                 duration: 0.2,

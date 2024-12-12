@@ -3,6 +3,8 @@ import { Slider } from "@nextui-org/react";
 
 import { Category } from "@/lib/definitions";
 import BreadCrumbBar from "@/components/UI/components/BreadCrumbBar";
+import CustomModal from "@/components/Custom/CustomModal";
+import AddItemForm from "@/components/Forms/AddItemForm";
 
 interface FilterSidebarProps {
   categories: Category[];
@@ -16,7 +18,11 @@ interface FilterSidebarProps {
   isAdmin: boolean;
 }
 
-const FilterSidebar: React.FC<FilterSidebarProps> = ({ value, setValue }) => (
+const FilterSidebar: React.FC<FilterSidebarProps> = ({
+  value,
+  setValue,
+  isAdmin,
+}: FilterSidebarProps) => (
   <div className=" flex flex-col  gap-2  border-b-4 p-1  h-full text-gray-300 font-extrabold">
     <div
       className={
@@ -40,21 +46,21 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ value, setValue }) => (
       />
     </div>
 
-    {/*<div>*/}
-    {/*  {isAdmin && (*/}
-    {/*    <div className={"flex gap-1"}>*/}
-    {/*      <CustomModal buttonName={"Adauga Item"} header={""}>*/}
-    {/*        <AddItemForm />*/}
-    {/*      </CustomModal>*/}
-    {/*      <CustomModal*/}
-    {/*        buttonName={"Adauga Categorie"}*/}
-    {/*        header={"Adauga categorie"}*/}
-    {/*      >*/}
-    {/*        <AddCategoryForm />*/}
-    {/*      </CustomModal>*/}
-    {/*    </div>*/}
-    {/*  )}*/}
-    {/*</div>*/}
+    <div>
+      {isAdmin && (
+        <div className={"flex gap-1"}>
+          <CustomModal buttonName={"Adauga Item"} header={""}>
+            <AddItemForm />
+          </CustomModal>
+          {/*  <CustomModal*/}
+          {/*    buttonName={"Adauga Categorie"}*/}
+          {/*    header={"Adauga categorie"}*/}
+          {/*  >*/}
+          {/*    <AddCategoryForm />*/}
+          {/*  </CustomModal>*/}
+        </div>
+      )}
+    </div>
   </div>
 );
 
