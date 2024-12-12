@@ -1,6 +1,7 @@
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/react";
 
 import UrlParams from "@/components/UI/components/UrlParams";
+import { Suspense } from "react";
 
 export default function BreadCrumbBar() {
   return (
@@ -21,7 +22,9 @@ export default function BreadCrumbBar() {
         Acasa
       </BreadcrumbItem>
       <BreadcrumbItem href={"/catalog"}>Catalog</BreadcrumbItem>
-      <BreadcrumbItem href={"/catalog"}>{<UrlParams />}</BreadcrumbItem>
+      <BreadcrumbItem href={"/catalog"}>
+        <Suspense fallback={<h1>Loading...</h1>}>{<UrlParams />}</Suspense>
+      </BreadcrumbItem>
     </Breadcrumbs>
   );
 }
