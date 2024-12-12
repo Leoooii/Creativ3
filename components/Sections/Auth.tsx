@@ -44,6 +44,7 @@ const Auth = () => {
               size={"sm"}
               onClick={() => {
                 logout().then(() => {
+                  console.log("iesire");
                   router.push("/");
                 });
               }}
