@@ -30,26 +30,12 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
         "flex flex-col justify-center sm:flex-row sm:justify-between gap-5 align-middle  "
       }
     >
-      <div className={"my-auto"}>
+      <div className={"my-auto w-1/3 flex justify-center"}>
         <BreadCrumbBar />
       </div>
 
-      {isAdmin && (
-        <div className={"flex gap-1 align-middle my-auto"}>
-          <CustomModal buttonName={"Adauga Item"} header={"Adauga item"}>
-            <AddItemForm />
-          </CustomModal>
-          <CustomModal
-            buttonName={"Adauga Categorie"}
-            header={"Adauga categorie"}
-          >
-            <AddCategoryForm />
-          </CustomModal>
-        </div>
-      )}
-
       <Slider
-        className="max-w-sm mb-3"
+        className=" w-1/3 mb-3"
         color={"secondary"}
         formatOptions={{ style: "currency", currency: "LEI" }}
         label="Interval preț"
@@ -61,6 +47,20 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
           setValue(Array.isArray(value) ? value : [value])
         }
       />
+
+      {isAdmin && (
+        <div className={"flex gap-1 align-middle my-auto w-1/3 justify-center"}>
+          <CustomModal buttonName={"Adauga Item"} header={"Adauga item"}>
+            <AddItemForm />
+          </CustomModal>
+          <CustomModal
+            buttonName={"Adauga Categorie"}
+            header={"Adauga categorie"}
+          >
+            <AddCategoryForm />
+          </CustomModal>
+        </div>
+      )}
     </div>
   </div>
 );

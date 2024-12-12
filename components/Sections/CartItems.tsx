@@ -106,7 +106,7 @@ const CartItems = () => {
               }
             >
               <div className={"flex justify-between"}>
-                <h1>{request.message}</h1>
+                <h1>Cerere: {request.message}</h1>
                 <h2>{request.email}</h2>
               </div>
               {request.items.map((item) => {
@@ -114,7 +114,7 @@ const CartItems = () => {
                   <CartItem key={item.id} isEditable={false} item={item} />
                 );
               })}
-              <h1>{request.answer}</h1>
+              {request.answer && <h1>Raspuns: {request.answer}</h1>}
               {isAdmin && !request.answer && (
                 <AdminAnswer fetchData={fetchData} id={request.id} />
               )}

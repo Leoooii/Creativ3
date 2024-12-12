@@ -14,9 +14,9 @@ const Auth = () => {
   const adminText = isAdmin ? "Admin" : "";
 
   return (
-    <div>
+    <div className={"mt-5"}>
       {user ? (
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <div className={"w-2/3 "}>
             <h1 className={" text-3xl"}>
               {adminText} {user.displayName}
