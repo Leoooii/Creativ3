@@ -33,7 +33,7 @@ export default function AuthForm({ method }: { method: string }) {
     } catch (err: unknown) {
       console.log(err);
     } finally {
-      router.push("/"); // Redirecționează utilizatorul după autentificare
+      router.push("/auth"); // Redirecționează utilizatorul după autentificare
     }
   };
 

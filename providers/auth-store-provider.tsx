@@ -14,7 +14,7 @@ import {
   signOut,
   User,
 } from "firebase/auth";
-import { auth } from "@/lib/firebase"; // presupunând că ai configurat Firebase
+import { auth } from "@/lib/firebase"; // Tipurile pentru starea și acțiunile de autentificare
 
 // Tipurile pentru starea și acțiunile de autentificare
 export type AuthContextType = {

@@ -8,21 +8,20 @@ import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 const Auth = () => {
   const { user, isAdmin, login, logout } = useAuth();
-  // const { items } = useCartStore();
   const router = useRouter();
 
   const adminText = isAdmin ? "Admin" : "";
-  const disconnect = async () => {
-    await logout().then(() => {
+  const disconnect = () => {
+    logout().then(() => {
       console.log("iesire");
-      router.push("/");
+      router.push("/auth");
     });
   };
 
   return (
     <div>
       {user ? (
-        <div className="flex justify-around  mx-2">
+        <div className="flex flex-col sm:flex-row justify-around  mx-2">
           <div className={"w-full flex gap-3"}>
             {user?.photoURL ? (
               <>
@@ -48,6 +47,7 @@ const Auth = () => {
             <Button color={"danger"} size={"sm"} onClick={disconnect}>
               Logout
             </Button>
+            <button onClick={disconnect}>logout</button>
           </div>
         </div>
       ) : (
