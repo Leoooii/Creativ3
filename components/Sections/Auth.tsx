@@ -53,7 +53,7 @@ const Auth = () => {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center content-center mx-2">
+        <div className="flex justify-center content-center mx-2 mt-5">
           <Button
             color={"primary"}
             size={"lg"}

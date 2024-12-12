@@ -30,12 +30,12 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
         "flex flex-col justify-center sm:flex-row sm:justify-between gap-5 align-middle  "
       }
     >
-      <div className={"my-auto w-1/3 flex justify-center"}>
+      <div className={"my-auto w-full sm:w-1/3 flex justify-center"}>
         <BreadCrumbBar />
       </div>
 
       <Slider
-        className=" w-1/3 mb-3"
+        className="w-full sm:w-1/3 mb-3"
         color={"secondary"}
         formatOptions={{ style: "currency", currency: "LEI" }}
         label="Interval preț"
@@ -49,7 +49,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
       />
 
       {isAdmin && (
-        <div className={"flex gap-1 align-middle my-auto w-1/3 justify-center"}>
+        <div
+          className={
+            "flex gap-1 align-middle my-auto w-full sm:w-1/3 justify-center"
+          }
+        >
           <CustomModal buttonName={"Adauga Item"} header={"Adauga item"}>
             <AddItemForm />
           </CustomModal>
