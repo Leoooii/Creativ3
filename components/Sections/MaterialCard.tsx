@@ -68,14 +68,14 @@ const MaterialCard: React.FC<MaterialProps> = ({ material }) => {
       shadow="lg"
       style={{ boxShadow: "0px 4px 10px rgba(0, 00, 100, 50)" }}
     >
-      <CardBody className="overflow-visible p-0 flex justify-center ">
+      <CardBody className="overflow-visible p-1 flex justify-center ">
         <Link
-          className="flex justify-center w-full "
+          className="flex justify-center w-full my-2 "
           href={`/catalog/${material.id}`}
         >
           <Image
             alt={material.name}
-            className="w-full object-fit hover:shadow-2xl  my-2 "
+            className="w-full object-fit hover:shadow-2xl h-36  "
             radius="lg"
             shadow="md"
             src={material.image_url}
@@ -95,7 +95,9 @@ const MaterialCard: React.FC<MaterialProps> = ({ material }) => {
         {/*/>*/}
         <h1 className={"font-bold text-2xl"}>{name}</h1>
         <h2>{material.category}</h2>
-        <h1 className={"text-black font-bold"}>{String(price)} lei</h1>
+        <h1 className={"text-black font-bold"}>
+          {String(price)} lei / {material.unit}
+        </h1>
         {/*<Input*/}
         {/*  label="Pret (RON) cu TVA"*/}
         {/*  readOnly={!isAdmin}*/}

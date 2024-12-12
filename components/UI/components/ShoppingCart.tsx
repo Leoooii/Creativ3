@@ -14,7 +14,7 @@ const ShopingCart = () => {
         <Link href={"/auth"}>
           <ShoppingCartIcon
             className={`w-10 hover:cursor-pointer border-b-1  ${pathname === "/auth" ? "border-white-500" : "border-black"}`}
-            color={"white"}
+            color={`${pathname === "/auth" ? "gray" : "white"}`}
           />
         </Link>
       </div>

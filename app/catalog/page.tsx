@@ -98,7 +98,7 @@ const CatalogPage = () => {
           />
         )}
       </div>
-      {numberOfItems}
+      {/*{numberOfItems}*/}
       {numberOfItems === 0 && (
         <h1>Nu există produse în acel interval de preț</h1>
       )}
