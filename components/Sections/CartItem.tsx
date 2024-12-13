@@ -38,8 +38,8 @@ const CartItem = ({
   }
 
   return (
-    <div className="bg-blue-600 p-2 flex rounded-md justify-between">
-      <div className="flex gap-2 items-center text-white">
+    <div className="bg-blue-600 p-2 flex-col gap-3 sm:flex-row flex rounded-md justify-between">
+      <div className="flex gap-2 items-center text-white justify-center">
         <Link
           className="bg-white p-1 rounded-md"
           href={`/catalog/${material.id}`}
