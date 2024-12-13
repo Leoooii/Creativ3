@@ -18,7 +18,7 @@ const CustomButton = ({ id }: { id: number }) => {
       <Button
         color={"primary"}
         size={"sm"}
-        // className={"z-50"}
+        className={"z-50 sm:z-50 md:z-50 lg:z-50"}
         onClick={() => {
           addItem(id); // AddItem rămâne sincronă
 
