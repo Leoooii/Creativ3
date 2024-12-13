@@ -14,7 +14,7 @@ const Auth = () => {
   const disconnect = () => {
     logout().then(() => {
       console.log("iesire");
-      router.push("/auth");
+      router.push("/");
     });
   };
 

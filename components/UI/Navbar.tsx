@@ -4,6 +4,7 @@ import CreativLogo from "@/public/Logo";
 import ShopingCart from "@/components/UI/components/ShoppingCart";
 import Catalog from "@/components/UI/components/Catalog";
 import SearchBar from "@/components/UI/components/SearchBar";
+import Home from "@/components/UI/components/Home";
 
 export default function Navbar() {
   return (
@@ -25,6 +26,7 @@ export default function Navbar() {
       </Link>
       <div className="flex items-center  gap-3  flex-row justify-center mx-auto w-1/3">
         <SearchBar />
+        <Home />
         <Catalog />
         <ShopingCart />
         {/*<AuthButton />*/}

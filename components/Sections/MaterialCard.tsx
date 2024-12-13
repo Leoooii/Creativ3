@@ -62,8 +62,8 @@ const MaterialCard: React.FC<MaterialProps> = ({ material }) => {
     <Card
       className={`border border-white rounded-md 
   ${!material.available && "bg-red-500"} 
-  hover:bg-gradient-to-br from-blue-200 to-blue-500 
-  hover:cursor-pointer hover:text-white 
+  
+  hover:cursor-pointer 
   transition-colors duration-[4000]`}
       shadow="lg"
       style={{ boxShadow: "0px 4px 10px rgba(0, 00, 100, 50)" }}

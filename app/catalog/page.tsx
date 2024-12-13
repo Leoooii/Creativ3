@@ -9,6 +9,7 @@ import UrlParams from "@/components/UI/components/UrlParams";
 import FilterSidebar from "@/components/Sections/FilterSidebar";
 import { useAuth } from "@/providers/auth-store-provider";
 import { useRouter } from "next/navigation";
+import { FolderMinusIcon } from "@heroicons/react/24/solid";
 
 const CatalogPage = () => {
   const [category, setCategory] = useState<string | null>("");
@@ -100,7 +101,13 @@ const CatalogPage = () => {
       </div>
       {/*{numberOfItems}*/}
       {numberOfItems === 0 && (
-        <h1>Nu există produse în acel interval de preț</h1>
+        <div
+          className="flex justify-center flex-col align-middle items-center
+        "
+        >
+          <h1 className={"text-2xl text-white"}>Nu există produse</h1>
+          <FolderMinusIcon className={"w-32"} color="white" />
+        </div>
       )}
     </div>
   );

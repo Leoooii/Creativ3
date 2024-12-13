@@ -16,8 +16,8 @@ import { CustomDropdown } from "@/components/Custom/CustomDropdown";
 
 const Header = () => {
   return (
-    <Navbar isBordered className="p-1 bg-gray-800  ">
-      <NavbarContent className=" flex gap-4 w-full mx-auto bg-gray-800 p-4 overflow-x-auto max-w-none">
+    <Navbar isBordered className="p-1 bg-gray-800 `">
+      <NavbarContent className=" flex gap-4 w-full mx-auto bg-gray-800 p-4 overflow-y-hidden overflow-x-auto max-w-none">
         <NavbarItem>
           <CustomDropdown array={Gradina} name="Gradina" />
         </NavbarItem>
