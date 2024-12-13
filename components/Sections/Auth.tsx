@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button, Image } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/providers/auth-store-provider";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
@@ -22,21 +22,21 @@ const Auth = () => {
     <div>
       {user ? (
         <div className="flex flex-col sm:flex-row justify-around  mx-2">
-          <div className={"w-full flex gap-3"}>
-            {user?.photoURL ? (
-              <>
+          <div className={"w-full flex flex-col  sm:flex-row gap-3"}>
+            <div className={"flex justify-center"}>
+              {user?.photoURL ? (
                 <Image
                   alt={"profile pic"}
-                  className={"rounded-full size-fit"}
+                  className={"rounded-full size-fit "}
                   height={80}
                   src={user.photoURL}
                   width={100}
                 />
-              </>
-            ) : (
-              <UserCircleIcon className="w-24" />
-            )}
-            <div>
+              ) : (
+                <UserCircleIcon className="w-24" />
+              )}
+            </div>
+            <div className={"flex justify-center items-center"}>
               <h1 className={" text-3xl"}>
                 {adminText} {user.displayName}
               </h1>
@@ -44,28 +44,44 @@ const Auth = () => {
             </div>
           </div>
           <div className={" flex justify-center"}>
-            <Button
-              color={"danger"}
-              size={"sm"}
+            {/*<Button*/}
+            {/*  color={"danger"}*/}
+            {/*  size={"sm"}*/}
+            {/*  onClick={disconnect}*/}
+            {/*  className={"z-50"}*/}
+            {/*>*/}
+            {/*  Logout*/}
+            {/*</Button>*/}
+            <button
               onClick={disconnect}
-              className={"z-50"}
+              className={
+                "border-1 border-red-400 rounded-2xl bg-red-100 px-4 py-2 text-red-500 " +
+                "  hover:opacity-50 my-2"
+              }
             >
               Logout
-            </Button>
-            <button onClick={disconnect}>logout</button>
+            </button>
           </div>
         </div>
       ) : (
         <div className="flex justify-center content-center mx-2 mt-5">
-          <Button
-            color={"primary"}
-            size={"lg"}
-            variant={"faded"}
+          {/*<Button*/}
+          {/*  color={"primary"}*/}
+          {/*  size={"lg"}*/}
+          {/*  variant={"faded"}*/}
+          {/*  onClick={login}*/}
+          {/*>*/}
+          {/*  Login with Google*/}
+          {/*</Button>*/}
+          <button
             onClick={login}
+            className={
+              "border-1 border-gray-400 rounded-2xl bg-gray-100 px-5 py-2 text-blue-500 hidden" +
+              " sm:block hover:opacity-50"
+            }
           >
             Login with Google
-          </Button>
-          <button onClick={login}>google</button>
+          </button>
         </div>
       )}
     </div>
