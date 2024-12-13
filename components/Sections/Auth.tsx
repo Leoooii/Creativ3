@@ -44,7 +44,12 @@ const Auth = () => {
             </div>
           </div>
           <div className={" flex justify-center"}>
-            <Button color={"danger"} size={"sm"} onClick={disconnect}>
+            <Button
+              color={"danger"}
+              size={"sm"}
+              onClick={disconnect}
+              className={"z-50"}
+            >
               Logout
             </Button>
             <button onClick={disconnect}>logout</button>
@@ -60,6 +65,7 @@ const Auth = () => {
           >
             Login with Google
           </Button>
+          <button onClick={login}>google</button>
         </div>
       )}
     </div>
