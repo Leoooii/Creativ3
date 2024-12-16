@@ -16,16 +16,14 @@ const list = [
 
 export default function AboutUs() {
   return (
-    <div className={` grid md:grid-cols-3 grid-cols-1  gap-10`}>
+    <div className={`grid md:grid-cols-3 grid-cols-1 gap-10`}>
       {list.map((item) => {
         return (
           <div
             key={item.description}
-            className="bg-gray-800 text-white rounded-md p-3 hover:bg-gray-900  flex items-center gap-2"
+            className="bg-gray-800 text-white rounded-md p-3 hover:bg-gray-900 flex items-center gap-2"
           >
-            <div>
-              <CheckCircleIcon className="size-8 text-white" color="white" />
-            </div>
+            <CheckCircleIcon className="size-8 text-white" color="white" />
 
             <h1>{item.description}</h1>
           </div>
