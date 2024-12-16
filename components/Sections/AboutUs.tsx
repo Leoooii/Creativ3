@@ -2,8 +2,7 @@ import { CheckCircleIcon } from "@heroicons/react/16/solid";
 
 const list = [
   {
-    description:
-      'Suntem unul dintre marii furnizori de materiale pentru constructii si instalatii, din Romania, care furnizeaza materiale pentru constructii “la cheie".',
+    description: 'Furnizam materiale pentru constructii “la cheie".',
   },
   {
     description:

@@ -8,8 +8,8 @@ import Home from "@/components/UI/components/Home";
 
 export default function Navbar() {
   return (
-    <div className="flex h-full sm:flex-row flex-col justify-center md:justify-between  px-0 md:px-20 py-3">
-      <div className="flex flex-col sm:flex-row gap-2 text-white align-middle items-center justify-center w-1/3 mx-auto">
+    <div className="flex h-full md:flex-row flex-col justify-center md:justify-between  px-0 md:px-20 py-3">
+      <div className="hidden lg:flex  flex-col sm:flex-row gap-2 text-white align-middle items-center justify-center w-1/3 mx-auto">
         <PhoneIcon
           color={"white"}
           height={16}
@@ -24,11 +24,13 @@ export default function Navbar() {
       <Link className="my-2 flex justify-center" href="/">
         <CreativLogo />
       </Link>
-      <div className="flex items-center  gap-3  flex-row justify-center mx-auto w-1/3">
+      <div className="flex flex-col md:flex-row items-center  gap-3   justify-center mx-auto w-1/3">
         <SearchBar />
-        <Home />
-        <Catalog />
-        <ShopingCart />
+        <div className="flex items-center gap-5">
+          <Home />
+          <Catalog />
+          <ShopingCart />
+        </div>
         {/*<AuthButton />*/}
       </div>
     </div>

@@ -13,15 +13,15 @@ const Work = () => {
           {" "}
           <div className="flex">
             <h1 className=" font-semibold">Luni-Vineri:</h1>
-            <h1 className="text-green-500 ml-1"> 8:00-16:00</h1>
+            <h1 className="text-green-900 ml-1"> 8:00-16:00</h1>
           </div>
           <div className="flex">
             <h1 className=" font-semibold">Sambata-Duminica:</h1>
-            <h1 className="text-blue-800 ml-1"> INCHIS</h1>
+            <h1 className="text-blue-900 ml-1"> INCHIS</h1>
           </div>
           <div className="flex">
             <h1 className=" font-semibold">Sediu:</h1>
-            <h1 className="text-blue-800 ml-1">
+            <h1 className="text-blue-900 ml-1">
               Str. Bucuresti nr. 216, Varteju, Jud. Ilfov (pe Centura Bucuresti)
             </h1>
           </div>

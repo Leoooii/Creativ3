@@ -20,7 +20,7 @@ export default function CustomCarousel() {
     >
       <Carousel
         infiniteLoop
-        autoPlay={false}
+        autoPlay={true}
         showStatus={false}
         showThumbs={false}
       >
