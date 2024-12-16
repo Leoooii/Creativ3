@@ -1,5 +1,7 @@
 import { fetchMaterialById } from "@/lib/data";
 import CustomButton from "@/components/Custom/CustomButton";
+import Image from "next/image";
+import { Link } from "@nextui-org/link";
 
 export default async function Page({
   params,
@@ -17,34 +19,47 @@ export default async function Page({
       style={{ boxShadow: "0px 4px 10px rgba(0, 00, 200, 50)" }}
     >
       <div className="p-2 flex flex-col justify-between">
+        <Link href={"/catalog"} color={"warning"}>
+          {"< "}Inapoi
+        </Link>
         <div>
-          <h1 className={"text-center mb-10 font-extrabold text-xl"}>
+          <h1 className={"text-center mb-10 font-extrabold text-3xl"}>
             {material?.name}
           </h1>
 
-          <h3>
+          <h1 className={"text-xl"}>
             Descriere: <br />
             <hr />
             {material?.description}
-          </h3>
+          </h1>
           {material?.available ? (
-            <h3 className={"text-green-500"}>In stoc</h3>
+            <h2 className={"text-green-500"}>In stoc</h2>
           ) : (
-            <h3 className={"text-red-500"}>Nu e in stoc</h3>
+            <h2 className={"text-red-500"}>Nu e in stoc</h2>
           )}
-          <h3>Categoria:`{material?.category}`</h3>
+          <h3>Categoria:</h3>
+          <Link href={`/catalog?category=${material?.category}`}>
+            {material?.category}
+          </Link>
         </div>
         <div>
-          <h3 className={"text-2xl"}>{material?.price} lei</h3>
+          <h3 className={"text-2xl"}>
+            {material?.price} lei / {material?.unit}
+          </h3>
           <CustomButton id={material!.id} />
         </div>
       </div>
       <div
         className={
-          "rounded-lg p-2 bg-gray-300 hover:bg-gray-200 flex justify-center"
+          "rounded-lg p-2 bg-gray-300 hover:bg-gray-200 flex justify-center "
         }
       >
-        <img alt={material?.name} src={material?.image_url} />
+        <Image
+          alt={material!.name}
+          src={material!.image_url}
+          width={200}
+          height={200}
+        />
       </div>
     </div>
   );

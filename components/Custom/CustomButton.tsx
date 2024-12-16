@@ -20,9 +20,7 @@ const CustomButton = ({ id }: { id: number }) => {
           " hover:opacity-75 "
         }
         onClick={() => {
-          addItem(id); // AddItem rămâne sincronă
-
-          // Faci toast și navigarea imediat după
+          addItem(id);
           toast.success("Adaugare reusita!", {
             position: "bottom-right",
             autoClose: 1000,
@@ -33,23 +31,11 @@ const CustomButton = ({ id }: { id: number }) => {
             theme: "dark",
             transition: Bounce,
           });
-
-          // Navighează către /auth
           router.push("/auth");
         }}
       >
         Adauga in cos
       </button>
-      {/*<ToastContainer*/}
-      {/*  closeOnClick*/}
-      {/*  pauseOnFocusLoss*/}
-      {/*  autoClose={1000}*/}
-      {/*  hideProgressBar={false}*/}
-      {/*  newestOnTop={false}*/}
-      {/*  position="bottom-right"*/}
-      {/*  rtl={false}*/}
-      {/*  theme="dark"*/}
-      {/*/>*/}
     </div>
   );
 };

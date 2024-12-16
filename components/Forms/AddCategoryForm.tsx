@@ -5,11 +5,15 @@ import { Button, Input } from "@nextui-org/react";
 
 import { addCategory, fetchCategories } from "@/lib/data";
 import { Category } from "@/lib/definitions";
+import { Bounce, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 
 const AddCategoryForm = () => {
   // const [name, setName] = useState("");
   const [categories, setCategories] = useState<Category[]>([]);
   const [newCategory, setNewCategory] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     const loadCategories = async () => {
@@ -28,7 +32,17 @@ const AddCategoryForm = () => {
   const handleSubmit = async () => {
     const { message } = await addCategory(newCategory);
 
-    alert(message);
+    toast.success(message, {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+    router.push("/");
   };
 
   return (

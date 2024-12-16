@@ -5,6 +5,7 @@ import { Image } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/providers/auth-store-provider";
 import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { Bounce, toast } from "react-toastify";
 
 const Auth = () => {
   const { user, isAdmin, login, logout } = useAuth();
@@ -13,7 +14,16 @@ const Auth = () => {
   const adminText = isAdmin ? "Admin" : "";
   const disconnect = () => {
     logout().then(() => {
-      console.log("iesire");
+      toast.warning("Delogare reusita!", {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
       router.push("/");
     });
   };
@@ -37,7 +47,7 @@ const Auth = () => {
               )}
             </div>
             <div className={"flex justify-center items-center"}>
-              <h1 className={" text-3xl"}>
+              <h1 className={"text-3xl mr-3"}>
                 {adminText} {user.displayName}
               </h1>
               <h2>{user.email}</h2>

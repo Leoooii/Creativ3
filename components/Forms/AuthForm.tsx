@@ -7,6 +7,8 @@ import {
 import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
 import { useAuth } from "@/providers/auth-store-provider";
+import { Bounce, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function AuthForm({ method }: { method: string }) {
   const [action, setAction] = useState<"reset" | "submit" | undefined>(
@@ -28,7 +30,16 @@ export default function AuthForm({ method }: { method: string }) {
       } else {
         data = await signInWithEmailAndPassword(auth, email, password);
       }
-
+      toast.success("Autentificare reusita!", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
       console.log(method, data);
     } catch (err: unknown) {
       console.log(err);
