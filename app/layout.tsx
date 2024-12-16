@@ -6,6 +6,7 @@ import Header from "@/components/UI/Header";
 import Footer from "@/components/UI/Footer";
 import { AuthProvider } from "@/providers/auth-store-provider";
 import { CartStoreProvider } from "@/providers/cart-store";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "CreativTub3",
@@ -30,11 +31,11 @@ export default function RootLayout({
               <div className="w-full bg-gray-800">
                 <Header />
               </div>
-              <div className="flex-grow   w-4/5 mx-auto ">
+              <div className="w-4/5 mx-auto ">
                 {/*  <Providers>*/}
                 {children}
                 {/*  </Providers>*/}
-                {/*  <ToastContainer />*/}
+                <ToastContainer />
               </div>
             </div>
             <Footer />

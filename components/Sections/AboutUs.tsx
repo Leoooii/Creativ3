@@ -27,7 +27,7 @@ export default function AboutUs() {
               <CheckCircleIcon className="size-8 text-white" color="white" />
             </div>
 
-            <h1 className="flex-1">{item.description}</h1>
+            <h1>{item.description}</h1>
           </div>
         );
       })}
