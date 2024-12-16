@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 export const metadata: Metadata = {
   title: "CreativTub",
   description: "Site de prezentare materiale de constructii",
+
   // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
 };
 

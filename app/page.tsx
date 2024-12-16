@@ -23,7 +23,7 @@ export default function Home() {
             duration={2}
           />
         </div>
-        <div className={"sm:w-2/5 w-full mt-20 "}>
+        <div className={"sm:w-2/5 w-full mt-10 "}>
           <CustomMotionImage
             alt={"building"}
             left={false}
