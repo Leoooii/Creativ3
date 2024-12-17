@@ -19,6 +19,9 @@ const Header = () => {
     <Navbar isBordered className="p-1 bg-gray-800 `">
       <NavbarContent className=" flex gap-4 w-full mx-auto bg-gray-800 p-4 overflow-y-hidden overflow-x-auto max-w-none">
         <NavbarItem>
+          <CustomDropdown array={Metalurgice} name="Metalurgice" />
+        </NavbarItem>
+        <NavbarItem>
           <CustomDropdown array={Gradina} name="Gradina" />
         </NavbarItem>
         <NavbarItem>
@@ -32,9 +35,6 @@ const Header = () => {
         </NavbarItem>
         <NavbarItem>
           <CustomDropdown array={Constructii} name="Constructii" />
-        </NavbarItem>
-        <NavbarItem>
-          <CustomDropdown array={Metalurgice} name="Metalurgice" />
         </NavbarItem>
       </NavbarContent>
     </Navbar>
