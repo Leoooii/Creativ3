@@ -42,7 +42,8 @@ export default function AuthForm({ method }: { method: string }) {
       });
       console.log(method, data);
     } catch (err: unknown) {
-      alert("Ati introdus parola/email gresit", err);
+      console.log(err);
+      alert("Ati introdus parola/email gresit");
     } finally {
       router.push("/auth"); // Redirecționează utilizatorul după autentificare
     }
