@@ -44,11 +44,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const login = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const loggedInUser = result.user;
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const loggedInUser = result.user;
 
-      setUser(loggedInUser);
-      setIsAdmin(loggedInUser.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL); // Verifică dacă este admin
+        setUser(loggedInUser);
+        setIsAdmin(loggedInUser.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL); // Verifică dacă este admin
+      } catch (error) {
+        console.log(error);
+      }
     } catch (error) {
       console.warn("Autentificarea a fost anulată de utilizator.", error);
     }

@@ -10,7 +10,8 @@ const list = [
   },
   {
     description:
-      "Experienta, profesionalismul si seriozitatea ne caracterizeaza activitatea de peste patru decenii.",
+      "Experienta, profesionalismul si seriozitatea ne caracterizeaza activitatea de peste un" +
+      " deceniu.",
   },
 ];
 
