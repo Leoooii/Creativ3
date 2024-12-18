@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={"pr-0"}>
       <body className={` antialiased md:px-8 px-0 bg-gray-500 min-h-screen`}>
         <AuthProvider>
           <CartStoreProvider>

@@ -1,5 +1,20 @@
 export const Metalurgice = [
   {
+    label: "Otel beton",
+  },
+  {
+    label: "Profile laminate la cald",
+  },
+  {
+    label: "Tevi din otel cu sudura",
+  },
+  {
+    label: "Tevi din otel fara sudura",
+  },
+  {
+    label: "Plase sudate",
+  },
+  {
     label: "Gratare zincate electroforjate",
     materiale: [
       {
@@ -248,26 +263,12 @@ export const Metalurgice = [
   {
     label: "Neferoase",
   },
-  {
-    label: "Otel beton",
-  },
-  {
-    label: "Profile laminate la cald",
-  },
+
   {
     label: "Sarma si produse din sarma",
   },
   {
     label: "Tabla pentru constructii",
-  },
-  {
-    label: "Tevi din otel cu sudura",
-  },
-  {
-    label: "Tevi din otel fara sudura",
-  },
-  {
-    label: "Plase sudate",
   },
 ];
 
