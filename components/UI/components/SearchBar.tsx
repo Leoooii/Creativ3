@@ -37,7 +37,7 @@ export default function SearchBar() {
   return (
     <Autocomplete
       allowsCustomValue
-      className="max-w-xs w-40"
+      className="max-w-xs w-56"
       color={"primary"}
       items={searchItems || []} // Furnizează lista de elemente (searchItems) ca prop
       label="Cauta produs"

@@ -8,6 +8,7 @@ import { Material } from "@/lib/definitions";
 import CustomButton from "@/components/Custom/CustomButton";
 
 import CustomDrawer from "@/components/Custom/CustomDrawer";
+import EditItemForm from "@/components/Forms/EditItemForm";
 
 interface MaterialProps {
   material: Material;
@@ -136,13 +137,15 @@ const MaterialCard: React.FC<MaterialProps> = ({
       {/*)}*/}
       <div className={"m-1"}>
         {isAdmin ? (
-          <CustomDrawer
-            id={material!.id}
-            name={name}
-            price={String(price)}
-            description={material.description}
-            onRefreshAction={onRefresh}
-          />
+          <CustomDrawer buttonName={"Editeaza"} header={"Modificati campurile"}>
+            <EditItemForm
+              id={material.id}
+              name={material.name}
+              price={String(price)}
+              description={material.description}
+              onRefreshAction={onRefresh}
+            />
+          </CustomDrawer>
         ) : (
           <CustomButton id={material!.id} />
         )}

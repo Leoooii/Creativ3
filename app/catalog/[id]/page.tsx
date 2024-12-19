@@ -32,11 +32,11 @@ export default async function Page({
             <hr />
             {material?.description}
           </h1>
-          {material?.available ? (
-            <h2 className={"text-green-500"}>In stoc</h2>
-          ) : (
-            <h2 className={"text-red-500"}>Nu e in stoc</h2>
-          )}
+          {/*{material?.available ? (*/}
+          {/*  <h2 className={"text-green-500"}>In stoc</h2>*/}
+          {/*) : (*/}
+          {/*  <h2 className={"text-red-500"}>Nu e in stoc</h2>*/}
+          {/*)}*/}
           <h3>Categoria:</h3>
           <Link href={`/catalog?category=${material?.category}`}>
             {material?.category}
