@@ -7,12 +7,19 @@ import { Material } from "@/lib/definitions";
 
 import CustomButton from "@/components/Custom/CustomButton";
 
+import CustomDrawer from "@/components/Custom/CustomDrawer";
+
 interface MaterialProps {
   material: Material;
-  // onDelete: () => Promise<void>;
+  onRefresh: () => Promise<void>;
+  isAdmin: boolean;
 }
 
-const MaterialCard: React.FC<MaterialProps> = ({ material }) => {
+const MaterialCard: React.FC<MaterialProps> = ({
+  material,
+  isAdmin,
+  onRefresh,
+}) => {
   const [name] = useState(material.name);
   const [price] = useState(material.price);
   // const [description] = useState(material.description);
@@ -128,7 +135,17 @@ const MaterialCard: React.FC<MaterialProps> = ({ material }) => {
       {/*  </CardFooter>*/}
       {/*)}*/}
       <div className={"m-1"}>
-        <CustomButton id={material!.id} />
+        {isAdmin ? (
+          <CustomDrawer
+            id={material!.id}
+            name={name}
+            price={String(price)}
+            description={material.description}
+            onRefreshAction={onRefresh}
+          />
+        ) : (
+          <CustomButton id={material!.id} />
+        )}
       </div>
     </Card>
   );

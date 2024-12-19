@@ -8,6 +8,7 @@ import {
   Image,
   Input,
   Switch,
+  Textarea,
 } from "@nextui-org/react";
 
 import AutocompleteComponent from "@/components/Sections/AutocompleteComponent";
@@ -84,6 +85,7 @@ const AddItemForm = () => {
         label="Pret"
         placeholder="Introduceti pretul"
         type="number"
+        step="0.01"
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
@@ -105,7 +107,7 @@ const AddItemForm = () => {
         />
       </div>
 
-      <Input
+      <Textarea
         required
         label="Descrierea produsului"
         placeholder="Introduceti descrierea produsului"

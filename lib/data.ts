@@ -169,20 +169,17 @@ export async function updateMaterial(
   id: number,
   name: string,
   price: number,
-  image_url: string,
   description: string,
-  category: string,
-  available: boolean,
 ) {
-  if (!id || !name || !price || !image_url) {
-    throw new Error("ID, name, price, and image_url are required");
+  if (!id || !name || !price) {
+    throw new Error("ID, name, price are required");
   }
   console.log("aici", id, price, name);
 
   try {
     const result = await sql`
       UPDATE Materials
-      SET name = ${name}, price = ${price}, image_url = ${image_url},description=${description},category=${category},available=${available}
+      SET name = ${name}, price = ${price}, description=${description}
       WHERE id = ${id};
     `;
 

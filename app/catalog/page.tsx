@@ -88,7 +88,11 @@ const CatalogPage = () => {
       </Suspense>
 
       <Suspense fallback={<div>Loading materials...</div>}>
-        <MaterialList loadMaterials={loadMaterials} materials={materials} />
+        <MaterialList
+          loadMaterials={loadMaterials}
+          materials={materials}
+          isAdmin={isAdmin}
+        />
       </Suspense>
       <div>
         {numberOfPages > 1 && (
