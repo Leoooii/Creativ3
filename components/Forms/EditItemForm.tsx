@@ -24,7 +24,7 @@ const EditItemForm = ({
       id,
       newName,
       Number(newPrice),
-      description,
+      newDescription,
     );
 
     alert(message);

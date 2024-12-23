@@ -174,7 +174,7 @@ export async function updateMaterial(
   if (!id || !name || !price) {
     throw new Error("ID, name, price are required");
   }
-  console.log("aici", id, price, name);
+  console.log("descrierea noua", description);
 
   try {
     const result = await sql`
