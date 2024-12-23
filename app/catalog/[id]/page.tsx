@@ -30,8 +30,9 @@ export default async function Page({
           <h1 className={"text-xl"}>
             Descriere: <br />
             <hr />
-            {material?.description}
           </h1>
+          <pre>{material!.description}</pre>
+
           {/*{material?.available ? (*/}
           {/*  <h2 className={"text-green-500"}>In stoc</h2>*/}
           {/*) : (*/}
