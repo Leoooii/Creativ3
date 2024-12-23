@@ -14,11 +14,12 @@ export default async function Page({
   return (
     <div
       className={
-        "bg-blue-950 my-12 rounded-lg shadow-sm grid grid-cols-1 sm:grid-cols-2  p-12 text-white gap-7"
+        "bg-blue-950 my-12 rounded-lg shadow-sm grid grid-cols-1 sm:grid-cols-3  p-12 text-white" +
+        " gap-7"
       }
       style={{ boxShadow: "0px 4px 10px rgba(0, 00, 200, 50)" }}
     >
-      <div className="p-2 flex flex-col justify-between">
+      <div className="p-2 flex flex-col justify-between col-span-2">
         <div className="flex justify-between items-center">
           <Link href={"/catalog"} color={"warning"}>
             Inapoi
@@ -53,7 +54,7 @@ export default async function Page({
       </div>
       <div
         className={
-          "rounded-lg p-2 bg-gray-300 hover:bg-gray-200 flex justify-center "
+          "rounded-lg p-2 bg-gray-300 hover:bg-gray-200 flex justify-center"
         }
       >
         <Image

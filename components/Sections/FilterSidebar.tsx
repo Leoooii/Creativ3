@@ -24,7 +24,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
   setValue,
   isAdmin,
 }: FilterSidebarProps) => (
-  <div className=" flex flex-col  gap-2  border-y-2 p-1  h-full text-gray-300 font-extrabold">
+  <div className=" flex flex-col  gap-2  border-b-2 p-1  h-full text-gray-300 font-extrabold rounded-b-xl">
     <div
       className={
         "flex flex-col justify-center sm:flex-row sm:justify-between gap-5 align-middle  "
@@ -35,8 +35,8 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
       </div>
 
       <Slider
-        className="w-full sm:w-1/3 mb-3"
-        color={"secondary"}
+        className="w-full sm:w-1/3 mb-3 "
+        color={"primary"}
         formatOptions={{ style: "currency", currency: "LEI" }}
         label="Interval preț"
         maxValue={100}

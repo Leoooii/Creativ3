@@ -70,7 +70,7 @@ const CatalogPage = () => {
   };
 
   return (
-    <div className="flex flex-col p-3 min-h-screen">
+    <div className="flex flex-col px-3 min-h-screen">
       <FilterSidebar
         categories={categories}
         isAdmin={isAdmin}

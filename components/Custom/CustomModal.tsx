@@ -28,7 +28,12 @@ const ModalComponent: React.FC<ModalProps> = ({
 
   return (
     <>
-      <Button color="primary" onPress={onOpen} variant="faded">
+      <Button
+        color="primary"
+        onPress={onOpen}
+        variant="solid"
+        className={"border-2 border-white"}
+      >
         {buttonName}
       </Button>
       <Modal

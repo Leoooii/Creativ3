@@ -3,7 +3,7 @@ import { sql } from "@vercel/postgres";
 
 import { Category, Material, RequestType } from "./definitions";
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 8;
 
 export async function fetchMaterials(
   currentPage: number,
