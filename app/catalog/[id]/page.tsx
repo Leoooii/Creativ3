@@ -19,9 +19,14 @@ export default async function Page({
       style={{ boxShadow: "0px 4px 10px rgba(0, 00, 200, 50)" }}
     >
       <div className="p-2 flex flex-col justify-between">
-        <Link href={"/catalog"} color={"warning"}>
-          {"< "}Inapoi
-        </Link>
+        <div className="flex justify-between items-center">
+          <Link href={"/catalog"} color={"warning"}>
+            Inapoi
+          </Link>
+          <Link href={`/catalog?category=${material?.category}`}>
+            {material?.category}
+          </Link>
+        </div>
         <div>
           <h1 className={"text-center mb-10 font-extrabold text-3xl"}>
             {material?.name}
@@ -38,10 +43,6 @@ export default async function Page({
           {/*) : (*/}
           {/*  <h2 className={"text-red-500"}>Nu e in stoc</h2>*/}
           {/*)}*/}
-          <h3>Categoria:</h3>
-          <Link href={`/catalog?category=${material?.category}`}>
-            {material?.category}
-          </Link>
         </div>
         <div>
           <h3 className={"text-2xl"}>

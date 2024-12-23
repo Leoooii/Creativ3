@@ -41,7 +41,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
         label="Interval preț"
         maxValue={100}
         minValue={0}
-        step={10}
+        step={5}
         value={value}
         onChange={(value: number | number[]) =>
           setValue(Array.isArray(value) ? value : [value])
@@ -54,11 +54,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
             "flex gap-1 align-middle my-auto w-full sm:w-1/3 justify-center"
           }
         >
-          <CustomModal buttonName={"Adauga Item"} header={"Adauga item"}>
+          <CustomModal buttonName={"Adauga produs"} header={"Adauga produs"}>
             <AddItemForm />
           </CustomModal>
           <CustomModal
-            buttonName={"Adauga Categorie"}
+            buttonName={"Adauga categorie"}
             header={"Adauga categorie"}
           >
             <AddCategoryForm />
