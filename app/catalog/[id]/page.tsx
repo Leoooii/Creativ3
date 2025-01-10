@@ -2,6 +2,7 @@ import { fetchMaterialById } from "@/lib/data";
 import CustomButton from "@/components/Custom/CustomButton";
 import Image from "next/image";
 import { Link } from "@nextui-org/link";
+import { BackwardIcon } from "@heroicons/react/24/solid";
 
 export default async function Page({
   params,
@@ -22,8 +23,9 @@ export default async function Page({
       <div className="p-2 flex flex-col justify-between col-span-2">
         <div className="flex justify-between items-center">
           <Link href={"/catalog"} color={"warning"}>
-            Inapoi
+            <BackwardIcon height={30} width={30} color={"white"} />
           </Link>
+
           <Link href={`/catalog?category=${material?.category}`}>
             {material?.category}
           </Link>
@@ -37,7 +39,11 @@ export default async function Page({
             Descriere: <br />
             <hr />
           </h1>
-          <pre>{material!.description}</pre>
+          <div>
+            <pre style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>
+              {material!.description}
+            </pre>
+          </div>
 
           {/*{material?.available ? (*/}
           {/*  <h2 className={"text-green-500"}>In stoc</h2>*/}
@@ -45,25 +51,22 @@ export default async function Page({
           {/*  <h2 className={"text-red-500"}>Nu e in stoc</h2>*/}
           {/*)}*/}
         </div>
-        <div>
+        <div className={"mt-5"}>
           <h3 className={"text-2xl"}>
             {material?.price} lei / {material?.unit}
           </h3>
           <CustomButton id={material!.id} />
         </div>
       </div>
-      <div
-        className={
-          "rounded-lg p-2 bg-gray-300 hover:bg-gray-200 flex justify-center"
-        }
-      >
-        <Image
-          alt={material!.name}
-          src={material!.image_url}
-          width={200}
-          height={200}
-        />
-      </div>
+
+      <Image
+        alt={material!.name}
+        src={material!.image_url}
+        width={300} // Poți păstra aceste dimensiuni pentru controlul minim
+        height={300}
+        style={{ objectFit: "cover", maxWidth: "100%", maxHeight: "100%" }} // Mărirea proporțională
+        className="border-5 mx-auto my-auto rounded-xl"
+      />
     </div>
   );
 }

@@ -15,7 +15,7 @@ const CatalogPage = () => {
   const [category, setCategory] = useState<string | null>("");
   const router = useRouter();
   const [materials, setMaterials] = useState<Material[]>([]);
-  const [value, setValue] = useState([0, 300]);
+  const [value, setValue] = useState([0, 700]);
   const [debouncedValue] = useDebounce(value, 500);
   const [numberOfItems, setNumberOfItems] = useState(0);
   const [page, setPage] = useState(1);

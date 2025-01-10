@@ -7,7 +7,7 @@ export default function BreadCrumbBar() {
   return (
     <Breadcrumbs
       classNames={{
-        list: "bg-gradient-to-l from-blue-400 to-blue-700 shadow-small my-auto",
+        list: "bg-gradient-to-l from-blue-400 to-blue-700 shadow-small my-auto ",
       }}
       color={"foreground"}
       itemClasses={{
