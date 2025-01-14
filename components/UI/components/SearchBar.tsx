@@ -25,7 +25,7 @@ export default function SearchBar() {
   }, []);
 
   const onInputChange = (value: string) => {
-    fetchMaterial(value);
+    fetchMaterial(value.toUpperCase());
   };
 
   const onSelectionChange = (id: string | number | null) => {
@@ -37,17 +37,27 @@ export default function SearchBar() {
   return (
     <Autocomplete
       allowsCustomValue
-      className="max-w-xs w-56"
+      className="w-80 min-h-auto"
       color={"primary"}
       items={searchItems || []} // Furnizează lista de elemente (searchItems) ca prop
       label="Cauta produs"
-      variant="faded"
+      variant="flat"
       onInputChange={onInputChange}
       onSelectionChange={onSelectionChange}
+      size={"sm"}
+      isVirtualized={true}
+      itemHeight={40}
     >
       {(item) => (
-        <AutocompleteItem key={item.id}>
-          <Link href={`/catalog/${item.id}`}>{item.name}</Link>
+        <AutocompleteItem
+          key={item.id}
+          className={"whitespace-normal break-words"}
+        >
+          <div style={{ height: "40" }}>
+            <Link href={`/catalog/${item.id}`} className={"text-sm p-1 m-1"}>
+              {item.name}
+            </Link>
+          </div>
         </AutocompleteItem>
       )}
     </Autocomplete>
