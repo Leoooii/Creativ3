@@ -25,6 +25,7 @@ export default async function Page({
           <Link href={"/catalog"} color={"warning"}>
             <BackwardIcon height={30} width={30} color={"white"} />
           </Link>
+          <div>inapoi</div>
 
           <Link href={`/catalog?category=${material?.category}`}>
             {material?.category}

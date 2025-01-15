@@ -46,7 +46,7 @@ const ModalComponent: React.FC<ModalProps> = ({
               y: -5,
               opacity: 1,
               transition: {
-                duration: 0.6,
+                duration: 0.3,
                 ease: "circOut",
               },
             },

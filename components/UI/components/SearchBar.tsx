@@ -16,7 +16,7 @@ export default function SearchBar() {
   const [inputValue, setInputValue] = useState("");
 
   const fetchMaterial = async (value: string) => {
-    const result = await fetchMaterialByFilter(value);
+    const result = await fetchMaterialByFilter(value, 10);
     setSearchItems(result);
     // console.log(result, "2");
   };

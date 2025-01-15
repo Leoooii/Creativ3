@@ -1,5 +1,6 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
+import { Tooltip } from "@nextui-org/react";
 
 interface UrlParamsProps {
   setCategory?: (value: string | null) => void;
@@ -24,8 +25,16 @@ const UrlParams: React.FC<UrlParamsProps> = ({
 
   return (
     <div className={setCategory ? "hidden" : "flex"}>
-      {categoryValue && categoryValue.toUpperCase()}
-      {searchValue && searchValue.toUpperCase()}
+      {categoryValue && (
+        <Tooltip content={categoryValue.toUpperCase()}>
+          {categoryValue.toUpperCase().slice(0, 15) + "..."}
+        </Tooltip>
+      )}
+      {searchValue && (
+        <Tooltip content={searchValue.toUpperCase()}>
+          {searchValue.toUpperCase().slice(0, 15) + "..."}
+        </Tooltip>
+      )}
       {!searchValue && !categoryValue && "Toate"}
     </div>
   );

@@ -131,13 +131,13 @@ export async function fetchMaterialById(id: string) {
   }
 }
 
-export async function fetchMaterialByFilter(filter: string) {
+export async function fetchMaterialByFilter(filter: string, limit: number) {
   try {
     const data = await sql<Material[]>`
       SELECT * 
       FROM Materials 
       WHERE name LIKE ${"%" + filter + "%"} 
-      LIMIT 10`;
+      LIMIT ${limit}`;
 
     // Returnează un singur array de obiecte Material
     return data.rows.flat(); // Folosește .flat() pentru a plana un array de array-uri

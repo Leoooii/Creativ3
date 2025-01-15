@@ -7,21 +7,21 @@ const Work = () => {
       style={{ boxShadow: "0px 4px 10px rgba(100, 100, 200, 150)" }}
     >
       <div>
-        <h1 className="font-bold font-sans mb-3">PROGRAM DE LUCRU</h1>
+        <h1 className="font-bold font-sans mb-3 text-2xl">PROGRAM DE LUCRU</h1>
         <hr />
         <div className="flex flex-col justify-center  p-6 gap-2">
           {" "}
           <div className="flex">
-            <h1 className=" font-semibold">Luni-Vineri:</h1>
-            <h1 className="text-green-900 ml-1"> 8:00-16:00</h1>
+            <h1 className=" font-semibold text-xl">Luni-Vineri:</h1>
+            <h1 className="text-green-900 ml-1 text-xl"> 8:00-16:00</h1>
           </div>
           <div className="flex">
-            <h1 className=" font-semibold">Sambata-Duminica:</h1>
-            <h1 className="text-blue-900 ml-1"> INCHIS</h1>
+            <h1 className=" font-semibold text-xl">Sambata-Duminica:</h1>
+            <h1 className="text-blue-900 ml-1 text-xl"> INCHIS</h1>
           </div>
           <div className="flex">
-            <h1 className=" font-semibold">Sediu:</h1>
-            <h1 className="text-blue-900 ml-1">
+            <h1 className=" font-semibold text-xl">Sediu:</h1>
+            <h1 className="text-blue-900 ml-1 text-xl">
               Str. Bucuresti nr. 216, Varteju, Jud. Ilfov (pe Centura Bucuresti)
             </h1>
           </div>

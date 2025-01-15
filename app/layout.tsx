@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={` antialiased md:px-8 px-0 bg-gray-500 min-h-screen`}>
         <AuthProvider>
           <CartStoreProvider>
-            <div className="flex  flex-col  md:overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 ">
+            <div className="flex  flex-col  md:overflow-hidden bg-gradient-to-l from-cyan-400 to-blue-500 ">
               <div className="w-full flex-none  bg-gray-800">
                 <Navbar />
               </div>
