@@ -3,21 +3,30 @@ import { useSearchParams } from "next/navigation";
 
 interface UrlParamsProps {
   setCategory?: (value: string | null) => void;
+  setSearch?: (value: string | null) => void;
 }
 
 const UrlParams: React.FC<UrlParamsProps> = ({
   setCategory,
+  setSearch,
 }: UrlParamsProps) => {
   const searchParams = useSearchParams();
   const categoryValue = searchParams.get("category");
+  const searchValue = searchParams.get("search");
 
   React.useEffect(() => {
     if (setCategory) setCategory(categoryValue);
-  }, [categoryValue, setCategory]); // Efect declanșat când se schimbă valoarea categoriei
+    if (setSearch) {
+      setSearch(searchValue);
+    }
+  }, [categoryValue, setCategory, searchValue, setSearch]); // Efect declanșat când se schimbă valoarea
+  // categoriei
 
   return (
     <div className={setCategory ? "hidden" : "flex"}>
-      {categoryValue ? categoryValue : "Toate"}
+      {categoryValue && categoryValue.toUpperCase()}
+      {searchValue && searchValue.toUpperCase()}
+      {!searchValue && !categoryValue && "Toate"}
     </div>
   );
 };

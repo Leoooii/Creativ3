@@ -22,6 +22,7 @@ const CatalogPage = () => {
   const [numberOfPages, setNumberOfPages] = useState(1);
   const { isAdmin } = useAuth();
   const [categories, setCategories] = useState<Category[]>([]);
+  const [search, setSearch] = useState<string | null>("");
 
   const loadMaterials = async () => {
     if (category) {
@@ -32,6 +33,17 @@ const CatalogPage = () => {
         category,
       );
 
+      setNumberOfPages(totalPages);
+      setMaterials(materialsData);
+      setNumberOfItems(materialsData.length);
+    } else if (search) {
+      const { materialsData, totalPages } = await fetchMaterials(
+        page,
+        debouncedValue[0],
+        debouncedValue[1],
+        undefined,
+        search.toUpperCase(),
+      );
       setNumberOfPages(totalPages);
       setMaterials(materialsData);
       setNumberOfItems(materialsData.length);
@@ -63,7 +75,7 @@ const CatalogPage = () => {
     loadCategories();
 
     console.log(category);
-  }, [debouncedValue, page, category]);
+  }, [debouncedValue, page, category, search]);
 
   const handleCategory = async (category: string) => {
     router.push(`/catalog?category=${category}`);
@@ -84,7 +96,7 @@ const CatalogPage = () => {
       />
 
       <Suspense fallback={<div>Loading url...</div>}>
-        <UrlParams setCategory={setCategory} />
+        <UrlParams setCategory={setCategory} setSearch={setSearch} />
       </Suspense>
 
       <Suspense fallback={<div>Loading materials...</div>}>

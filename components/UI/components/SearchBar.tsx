@@ -13,11 +13,12 @@ export default function SearchBar() {
     undefined,
   );
   const router = useRouter();
+  const [inputValue, setInputValue] = useState("");
 
   const fetchMaterial = async (value: string) => {
     const result = await fetchMaterialByFilter(value);
     setSearchItems(result);
-    console.log(result, "2");
+    // console.log(result, "2");
   };
 
   useEffect(() => {
@@ -25,12 +26,20 @@ export default function SearchBar() {
   }, []);
 
   const onInputChange = (value: string) => {
+    setInputValue(value);
     fetchMaterial(value.toUpperCase());
   };
 
   const onSelectionChange = (id: string | number | null) => {
     if (id) {
       router.push(`/catalog/${id}`);
+    }
+  };
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    console.log("pressed");
+    if (event.key === "Enter" && inputValue) {
+      console.log("entered");
+      router.push(`/catalog?search=${encodeURIComponent(inputValue)}`);
     }
   };
 
@@ -47,6 +56,7 @@ export default function SearchBar() {
       size={"sm"}
       isVirtualized={true}
       itemHeight={40}
+      onKeyDown={handleKeyDown}
     >
       {(item) => (
         <AutocompleteItem

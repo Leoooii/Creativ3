@@ -10,6 +10,7 @@ export async function fetchMaterials(
   minPrice?: number,
   maxPrice?: number,
   category?: string,
+  search?: string,
 ): Promise<{ materialsData: Material[]; totalPages: number }> {
   try {
     const offset = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -29,6 +30,7 @@ export async function fetchMaterials(
         AND price <= ${maxPrice || 999999}`;
 
     if (category) {
+      console.log(`Searching materials for ${category} 2`);
       query = sql<Material[]>`
         SELECT * FROM Materials
         WHERE price >= ${minPrice || 0}
@@ -41,6 +43,21 @@ export async function fetchMaterials(
       count =
         await sql`SELECT COUNT(*) FROM Materials   WHERE price >= ${minPrice || 0}
         AND price <= ${maxPrice || 999999}  AND category=${category}`;
+    }
+    if (search) {
+      console.log(`Searching materials for ${search}`);
+      query = sql<Material[]>`
+        SELECT * FROM Materials
+        WHERE price >= ${minPrice || 0}
+        AND price <= ${maxPrice || 999999}
+        AND name LIKE ${"%" + search + "%"} 
+           ORDER BY price
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+         
+      `;
+      count =
+        await sql`SELECT COUNT(*) FROM Materials   WHERE price >= ${minPrice || 0}
+        AND price <= ${maxPrice || 999999} AND name LIKE ${"%" + search + "%"} `;
     }
 
     // Executarea query-ului pentru materiale
@@ -119,7 +136,8 @@ export async function fetchMaterialByFilter(filter: string) {
     const data = await sql<Material[]>`
       SELECT * 
       FROM Materials 
-      WHERE name LIKE ${"%" + filter + "%"}`;
+      WHERE name LIKE ${"%" + filter + "%"} 
+      LIMIT 10`;
 
     // Returnează un singur array de obiecte Material
     return data.rows.flat(); // Folosește .flat() pentru a plana un array de array-uri
