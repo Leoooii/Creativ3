@@ -15,6 +15,7 @@ import AutocompleteComponent from "@/components/Sections/AutocompleteComponent";
 
 import { addMaterial, fetchCategories } from "@/lib/data";
 import { Category } from "@/lib/definitions";
+import { Bounce, toast } from "react-toastify";
 
 const defaultImg =
   "https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/upload-bold-arrow-icon.png";
@@ -27,7 +28,7 @@ const AddItemForm = () => {
   const [available, setAvailable] = useState(true);
   const [unit, setUnit] = useState("");
 
-  const [category, setCategory] = useState("Constructii");
+  const [category, setCategory] = useState("Test");
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
@@ -44,7 +45,8 @@ const AddItemForm = () => {
     loadCategories();
   }, []);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const { message } = await addMaterial(
       name,
       price,
@@ -54,7 +56,16 @@ const AddItemForm = () => {
       category,
       unit,
     );
-
+    toast.success(message, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
     alert(message);
   };
 
@@ -98,7 +109,7 @@ const AddItemForm = () => {
         onChange={(e) => setImageURL(e.target.value)}
       />
 
-      <div className="flex justify-center">
+      <div className="flex justify-center opacity-100">
         <Image
           alt="preview"
           height={100}
