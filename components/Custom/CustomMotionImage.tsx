@@ -26,7 +26,6 @@ const CustomMotionImage = ({
       style={{ boxShadow: "0px 5px 5px rgba(220, 210, 250, 250)" }}
       width={350}
       height={350}
-      layout={"responsive"}
     />
   </motion.div>
 );
