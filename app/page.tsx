@@ -16,8 +16,7 @@ export default function Home() {
 
       <AboutUs />
       <hr className="border-blue-800" />
-
-      <ShowCase value={"otel"} />
+      <ShowCase value={"inox"} />
 
       <hr className="border-blue-800" />
       <div className="flex flex-wrap flex-col justify-center  sm:flex-row sm:justify-between gap-5">
@@ -48,7 +47,7 @@ export default function Home() {
         </div>
       </div>
       <hr className="border-blue-800" />
-      <ShowCase value={"teava dreptunghiulara"} />
+      <ShowCase value={"otel"} />
       <hr className="border-blue-800" />
       <Work />
     </div>

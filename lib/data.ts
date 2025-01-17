@@ -188,8 +188,9 @@ export async function updateMaterial(
   name: string,
   price: number,
   description: string,
+  category: string,
 ) {
-  if (!id || !name || !price) {
+  if (!id || !name || !price || !description || !category) {
     throw new Error("ID, name, price are required");
   }
   console.log("descrierea noua", description);
@@ -197,7 +198,7 @@ export async function updateMaterial(
   try {
     const result = await sql`
       UPDATE Materials
-      SET name = ${name}, price = ${price}, description=${description}
+      SET name = ${name}, price = ${price}, description=${description}, category=${category}
       WHERE id = ${id};
     `;
 

@@ -39,7 +39,8 @@
     "react-responsive-carousel": "^3.2.23",
     "react-toastify": "^10.0.6",
     "swiper": "^11.1.15",
-    "use-debounce": "^10.0.4"
+    "use-debounce": "^10.0.4",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "@types/node": "^20",

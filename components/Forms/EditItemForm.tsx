@@ -7,17 +7,20 @@ const EditItemForm = ({
   name,
   description,
   price,
+  category,
   onRefreshAction,
 }: {
   id: number;
   name: string;
   description: string;
   price: string;
+  category: string;
   onRefreshAction: () => Promise<void>;
 }) => {
   const [newName, setNewName] = React.useState(name);
   const [newPrice, setNewPrice] = React.useState(price);
   const [newDescription, setNewDescription] = React.useState(description);
+  const [newCategory, setNewCategory] = React.useState(category);
 
   const handleEdit = async () => {
     const { message } = await updateMaterial(
@@ -25,6 +28,7 @@ const EditItemForm = ({
       newName,
       Number(newPrice),
       newDescription,
+      newCategory,
     );
 
     alert(message);
@@ -52,6 +56,13 @@ const EditItemForm = ({
         type="text"
         value={newDescription}
         onChange={(e) => setNewDescription(e.target.value)}
+      />
+      <Input
+        label="Categorie"
+        placeholder="Modifica categoria"
+        variant="bordered"
+        value={newCategory}
+        onChange={(e) => setNewCategory(e.target.value)}
       />
       <Input
         label={"Pret"}

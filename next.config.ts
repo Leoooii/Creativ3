@@ -5,27 +5,27 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "*",
+        hostname: "**", // Permite orice domeniu HTTPS
       },
     ],
+    domains: ["*"], // Alternativă pentru flexibilitate (Next.js poate să ignore această opțiune)
   },
   async headers() {
     return [
       {
-        // Aplica headerele pentru toate rutele din aplicație
         source: "/(.*)",
         headers: [
           {
             key: "Cache-Control",
-            value: "no-store, max-age=0, must-revalidate", // Dezactivează complet cache-ul
+            value: "no-store, max-age=0, must-revalidate",
           },
           {
             key: "Pragma",
-            value: "no-cache", // Suport suplimentar pentru browserele mai vechi
+            value: "no-cache",
           },
           {
             key: "Expires",
-            value: "0", // Forțează expirarea imediată a resurselor
+            value: "0",
           },
         ],
       },

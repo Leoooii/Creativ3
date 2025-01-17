@@ -66,7 +66,7 @@ const AddItemForm = () => {
       theme: "dark",
       transition: Bounce,
     });
-    alert(message);
+    // alert(message);
   };
 
   const handleCategory = async (category: string): Promise<void> => {
@@ -106,7 +106,10 @@ const AddItemForm = () => {
         maxLength={250}
         placeholder="URL imagine"
         value={imageURL}
-        onChange={(e) => setImageURL(e.target.value)}
+        onChange={(e) => {
+          setImageURL(e.target.value);
+          console.log(e.target.value);
+        }}
       />
 
       <div className="flex justify-center opacity-100">

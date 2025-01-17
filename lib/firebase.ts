@@ -1,13 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "@firebase/auth";
+import { getStorage } from "@firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCrOUQDf-dapVyYTlE-zQk3BjtmpwArCBo",
   authDomain: "cretiv.firebaseapp.com",
   projectId: "cretiv",
-  storageBucket: "cretiv.appspot.com",
   messagingSenderId: "417028783586",
   appId: "1:417028783586:web:f59b01a5b7fe06e2be4dbb",
 };
@@ -39,3 +39,4 @@ export const signIn = () =>
     });
 
 export const signOut = () => auth.signOut();
+export const storage = getStorage(app);

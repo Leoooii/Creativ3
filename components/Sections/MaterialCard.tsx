@@ -143,6 +143,7 @@ const MaterialCard: React.FC<MaterialProps> = ({
               name={material.name}
               price={String(price)}
               description={material.description}
+              category={material.category}
               onRefreshAction={onRefresh}
             />
           </CustomDrawer>
