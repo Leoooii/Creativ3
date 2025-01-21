@@ -23,6 +23,7 @@ export default function CustomCarousel() {
         autoPlay={true}
         showStatus={false}
         showThumbs={false}
+        interval={2000}
       >
         <div className="flex  gap-10 justify-center flex-col  sm:flex-row h-min">
           <div className="w-1/3 flex flex-col justify-center items-center gap-2 text-black font-sans p-0 pt-5 sm:p-14 mx-auto">

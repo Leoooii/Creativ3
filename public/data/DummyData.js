@@ -279,9 +279,7 @@ export const Constructii = [
   {
     label: "Materiale prafoase",
   },
-  {
-    label: "Material lemnos pentru constructii",
-  },
+
   {
     label: "Placi si placaje din material lemnos",
   },
@@ -312,18 +310,18 @@ export const Constructii = [
   {
     label: "Diluanti, Decapanti",
   },
-  {
-    label: "Tamplarie",
-  },
-  {
-    label: "Invelitori pentru acoperisuri",
-  },
-  {
-    label: "Lacuri",
-  },
-  {
-    label: "Pardoseli calde",
-  },
+  // {
+  //   label: "Tamplarie",
+  // },
+  // {
+  //   label: "Invelitori pentru acoperisuri",
+  // },
+  // {
+  //   label: "Lacuri",
+  // },
+  // {
+  //   label: "Pardoseli calde",
+  // },
 ];
 
 export const Electrice = [

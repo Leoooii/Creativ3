@@ -141,7 +141,7 @@ const AddItemForm = () => {
           variant="bordered"
           onInputChange={onUnitChange}
         >
-          {["kg", "buc", "l", "ml"].map((item) => {
+          {["kg", "buc", "l", "ml", "mp", "pac"].map((item) => {
             return <AutocompleteItem key={item}>{item}</AutocompleteItem>;
           })}
         </Autocomplete>
