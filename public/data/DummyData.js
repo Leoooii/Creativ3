@@ -286,14 +286,12 @@ export const Constructii = [
   {
     label: "Hidro-fono-termoizolante",
   },
-  {
-    label: "Produse calcaroase si de masa",
-  },
+
   {
     label: "Gips carton",
   },
   {
-    label: "Polietilena si PVC",
+    label: "Polietilena si pvc",
   },
   {
     label: "Vopsele",
