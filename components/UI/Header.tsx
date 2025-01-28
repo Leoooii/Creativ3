@@ -10,7 +10,10 @@ import { CustomDropdown } from "@/components/Custom/CustomDropdown";
 const Header = () => {
   return (
     <Navbar isBordered className="p-1 bg-gray-800 `">
-      <NavbarContent className=" flex gap-4 w-full mx-auto bg-gray-800 p-4 overflow-y-hidden overflow-x-auto max-w-none">
+      <NavbarContent
+        className="flex gap-4 w-full mx-auto bg-gray-800 p-1 overflow-y-hidden overflow-x-auto max-w-none"
+        justify={"center"}
+      >
         <NavbarItem>
           <CustomDropdown array={Metalurgice} name="Metalurgice" />
         </NavbarItem>
@@ -24,10 +27,10 @@ const Header = () => {
         {/*  <CustomDropdown array={Sanitare} name="Sanitare" />*/}
         {/*</NavbarItem>*/}
         <NavbarItem>
-          <CustomDropdown array={Electrice} name="Electrice" />
+          <CustomDropdown array={Constructii} name="Constructii" />
         </NavbarItem>
         <NavbarItem>
-          <CustomDropdown array={Constructii} name="Constructii" />
+          <CustomDropdown array={Electrice} name="Electrice" />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

@@ -28,6 +28,7 @@ export const CustomDropdown = ({
         <Button
           className={"rounded-sm bg-transparent text-gray-100 my-2"}
           color={"primary"}
+          size={"md"}
         >
           <div className={"flex gap-2 "}>
             <h1 className={"font-bold"}>{name.toUpperCase()}</h1>
@@ -38,7 +39,7 @@ export const CustomDropdown = ({
       </DropdownTrigger>
       <DropdownMenu
         aria-label="Dynamic Actions"
-        className="rounded-sm"
+        className={"max-w-72"}
         color="secondary"
         items={array}
         variant="faded"

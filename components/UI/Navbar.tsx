@@ -7,7 +7,7 @@ import SearchBar from "@/components/UI/components/SearchBar";
 
 export default function Navbar() {
   return (
-    <div className="flex h-full md:flex-row flex-col justify-center md:justify-between  px-0 md:px-20 py-3">
+    <div className="flex h-full md:flex-row flex-col justify-center md:justify-between  px-0 md:px-20 ">
       <div className="hidden lg:flex  flex-col sm:flex-row gap-2 text-white align-middle items-center justify-center w-1/3 mx-auto">
         <PhoneIcon
           color={"white"}

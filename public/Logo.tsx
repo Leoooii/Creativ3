@@ -2,9 +2,7 @@ import Image from "next/image";
 
 export default function CreativLogo() {
   return (
-    <div
-      className={`flex flex-row items-center w-32 sm:w-32 leading-none text-white`}
-    >
+    <div className={`flex flex-row items-center leading-none text-white`}>
       {/*<GlobeAltIcon className="h-12 w-12 rotate-[15deg]" />*/}
       <Image
         alt="creativ-logo"

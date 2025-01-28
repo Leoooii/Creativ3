@@ -329,9 +329,9 @@ export const Electrice = [
   {
     label: "Surse de lumina",
   },
-  {
-    label: "Protectie si distributie energie electrica",
-  },
+  // {
+  //   label: "Protectie si distributie energie electrica",
+  // },
 
   {
     label: "Produse pentru trasee electrice",
@@ -345,21 +345,21 @@ export const Electrice = [
   {
     label: "Corpuri de iluminat",
   },
-  {
-    label: "Elemente de conectare si fixare pentru instalatii electrice",
-  },
-  {
-    label: "Cabluri conductori electrici",
-  },
+  // {
+  //   label: "Elemente de conectare si fixare pentru instalatii electrice",
+  // },
+  // {
+  //   label: "Cabluri conductori electrici",
+  // },
   {
     label: "Cabluri telecom si transmisie date",
   },
-  {
-    label: "Aparataj joasa tensiune",
-  },
-  {
-    label: "Panouri fotovoltaice",
-  },
+  // {
+  //   label: "Aparataj joasa tensiune",
+  // },
+  // {
+  //   label: "Panouri fotovoltaice",
+  // },
 ];
 
 export const Sanitare = [

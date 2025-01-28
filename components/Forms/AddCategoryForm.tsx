@@ -48,10 +48,14 @@ const AddCategoryForm = () => {
   return (
     <div className={"flex flex-col gap-2"}>
       <h1 className={"font-bold"}>Categorii existente:</h1>
-      <div className={"grid grid-cols-2 "}>
+      <div className={"grid grid-cols-2 max-h-52 overflow-y-scroll gap-2"}>
         {categories &&
           categories.map((category) => {
-            return <div key={category.name}>{category.name}</div>;
+            return (
+              <div key={category.name} className={"border-b-2 self-end"}>
+                {category.name}
+              </div>
+            );
           })}
       </div>
       <Input

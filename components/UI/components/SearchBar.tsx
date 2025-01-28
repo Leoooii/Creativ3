@@ -47,7 +47,7 @@ export default function SearchBar() {
     <Autocomplete
       allowsCustomValue
       className="w-80 min-h-auto"
-      color={"primary"}
+      color={"default"}
       items={searchItems || []} // Furnizează lista de elemente (searchItems) ca prop
       label="Cauta produs"
       variant="flat"

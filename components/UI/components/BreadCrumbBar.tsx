@@ -18,9 +18,9 @@ export default function BreadCrumbBar() {
       underline="hover"
       variant="bordered"
     >
-      <BreadcrumbItem className={"text-white "} href={"/"}>
-        Acasa
-      </BreadcrumbItem>
+      {/*<BreadcrumbItem className={"text-white "} href={"/"}>*/}
+      {/*  Acasa*/}
+      {/*</BreadcrumbItem>*/}
       <BreadcrumbItem href={"/catalog"}>Catalog</BreadcrumbItem>
       <BreadcrumbItem href={"/catalog"}>
         <Suspense fallback={<h1>Loading...</h1>}>{<UrlParams />}</Suspense>
