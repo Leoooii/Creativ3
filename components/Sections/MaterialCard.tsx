@@ -68,7 +68,7 @@ const MaterialCard: React.FC<MaterialProps> = ({
 
   return (
     <Card
-      className={`border border-white rounded-md 
+      className={`border border-white max-h-fit rounded-md 
   ${!material.available && "bg-red-500"} 
   
   hover:cursor-pointer 
@@ -83,7 +83,7 @@ const MaterialCard: React.FC<MaterialProps> = ({
         >
           <Image
             alt={material.name}
-            className="w-full object-fit hover:shadow-2xl h-36  "
+            className="w-full object-fit hover:shadow-2xl max-h-36  "
             radius="lg"
             shadow="md"
             src={material.image_url}
@@ -101,7 +101,7 @@ const MaterialCard: React.FC<MaterialProps> = ({
         {/*  value={name}*/}
         {/*  onChange={handleNameChange}*/}
         {/*/>*/}
-        <h1 className={"font-bold text-2xl"}>{name}</h1>
+        <h1 className={"font-bold text-xl "}>{name}</h1>
         <h2>{material.category}</h2>
         <h1 className={"text-black font-bold"}>
           {String(price)} lei / {material.unit}

@@ -65,7 +65,7 @@ export default async function Page({
         width={300} // Poți păstra aceste dimensiuni pentru controlul minim
         height={300}
         style={{ objectFit: "cover", maxWidth: "100%", maxHeight: "100%" }} // Mărirea proporțională
-        className="border-5 mx-auto my-auto rounded-xl"
+        className="border-5 mx-auto my-auto rounded-xl float-left"
       />
     </div>
   );

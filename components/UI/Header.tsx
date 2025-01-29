@@ -3,7 +3,12 @@
 import React from "react";
 import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 
-import { Constructii, Electrice, Metalurgice } from "@/public/data/DummyData";
+import {
+  Constructii,
+  Electrice,
+  Metalurgice,
+  Unelte,
+} from "@/public/data/DummyData";
 
 import { CustomDropdown } from "@/components/Custom/CustomDropdown";
 
@@ -20,9 +25,7 @@ const Header = () => {
         {/*<NavbarItem>*/}
         {/*  <CustomDropdown array={Gradina} name="Gradina" />*/}
         {/*</NavbarItem>*/}
-        {/*<NavbarItem>*/}
-        {/*  <CustomDropdown array={Unelte} name="Unelte" />*/}
-        {/*</NavbarItem>*/}
+
         {/*<NavbarItem>*/}
         {/*  <CustomDropdown array={Sanitare} name="Sanitare" />*/}
         {/*</NavbarItem>*/}
@@ -31,6 +34,9 @@ const Header = () => {
         </NavbarItem>
         <NavbarItem>
           <CustomDropdown array={Electrice} name="Electrice" />
+        </NavbarItem>
+        <NavbarItem>
+          <CustomDropdown array={Unelte} name="Unelte" />
         </NavbarItem>
       </NavbarContent>
     </Navbar>
