@@ -68,7 +68,7 @@ const MaterialCard: React.FC<MaterialProps> = ({
 
   return (
     <Card
-      className={`border border-white max-h-fit rounded-md 
+      className={`border border-white  rounded-md 
   ${!material.available && "bg-red-500"} 
   
   hover:cursor-pointer 

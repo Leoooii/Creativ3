@@ -46,7 +46,7 @@ const Auth = () => {
                 <UserCircleIcon className="w-24" />
               )}
             </div>
-            <div className={"flex justify-center items-center"}>
+            <div className={"flex flex-col justify-center"}>
               <h1 className={"text-3xl mr-3"}>
                 {adminText} {user.displayName}
               </h1>
@@ -69,7 +69,7 @@ const Auth = () => {
                 "  hover:opacity-50 my-2"
               }
             >
-              Logout
+              Delogare
             </button>
           </div>
         </div>

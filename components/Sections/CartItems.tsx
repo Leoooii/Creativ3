@@ -91,7 +91,7 @@ const CartItems = () => {
         </h1>
       )}
       <div className={"mt-2 "}>
-        {requests && (
+        {requests && Array.isArray(requests) && (
           <h1 className={"text-center m-3 font-extrabold text-2xl"}>
             Istoric cereri
           </h1>

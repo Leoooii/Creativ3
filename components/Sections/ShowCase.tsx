@@ -13,7 +13,7 @@ const ShowCase = ({ value }: { value: string }) => {
   const router = useRouter();
 
   const fetchMaterial = async (value: string) => {
-    const result = await fetchMaterialByFilter(value, 4);
+    const result = await fetchMaterialByFilter(value, 5);
     setItems(result);
     console.log(result, "2");
   };
@@ -22,31 +22,36 @@ const ShowCase = ({ value }: { value: string }) => {
   }, []);
 
   return (
-    <div className="w-full bg-gray-800 flex flex-col rounded-xl  gap-5 p-5 ">
+    <div className="max-w-full bg-blue-950 flex flex-col rounded-xl  gap-5 p-5 ">
       {items.length > 0 ? (
-        <div
-          className={
-            "flex flex-col md:flex-row rounded-xl justify-around gap-3"
-          }
-        >
+        <div className={"grid grid-cols-5 gap-2 "}>
           {items.map((item) => {
             return (
               <div
                 key={item.id}
                 className={
-                  "flex flex-col justify-center items-center bg-white p-3 rounded-lg hover:opacity-80" +
-                  " hover:cursor-pointer"
+                  "flex flex-col justify-between items-center bg-white  rounded-lg hover:opacity-80" +
+                  " hover:cursor-pointer min-h-64 min-w-32 max-h-fit"
                 }
                 onClick={() => {
                   router.push("/catalog/" + item.id);
                 }}
               >
-                <Image
-                  src={item.image_url}
-                  className={"mx-auto max-h-52"}
-                  alt={"items"}
-                />
-                <h1 className={"text-center mt-2"}>{item.name}</h1>
+                <div
+                  className={"w-full flex flex-col justify-center items-center"}
+                >
+                  <Image
+                    src={item.image_url}
+                    className={"mx-auto max-w-40 max-h-32"}
+                    alt={"items"}
+                  />
+                  <h1 className={"text-center mt-2 max-w-32 text-sm mx-auto"}>
+                    {item.name}
+                  </h1>
+                </div>
+                <div className={"bg-gray-200 w-full p-1"}>
+                  {item.price}/{item.unit}
+                </div>
               </div>
             );
           })}
@@ -60,7 +65,7 @@ const ShowCase = ({ value }: { value: string }) => {
           href={`/catalog?search=${value}`}
           className={"text-white text-2xl"}
         >
-          Mai multe...
+          <strong>{value}</strong>...
         </Link>
       )}
     </div>

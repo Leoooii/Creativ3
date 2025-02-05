@@ -16,7 +16,7 @@ const CustomButton = ({ id }: { id: number }) => {
     <div>
       <button
         className={
-          "bg-blue-100 text-blue-900 px-3 py-1 rounded-xl border-1 border-blue-900" +
+          "bg-blue-200 text-blue-900 px-3 py-1 rounded-xl border-1 border-blue-900" +
           " hover:opacity-75 "
         }
         onClick={() => {

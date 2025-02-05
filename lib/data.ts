@@ -112,7 +112,7 @@ export async function addCategory(name: string) {
 
     console.log(query);
 
-    return { message: "Category added successfully" };
+    return { message: "Categorie adaugata cu succes" };
   } catch (error) {
     console.log(error);
     throw new Error("Failed to add categories");
@@ -176,7 +176,7 @@ export async function addMaterial(
     `;
     // await sql<Material>`SELECT * FROM Materials`;
 
-    return { message: "Material added successfully" };
+    return { message: "Material adaugat cu succes" };
   } catch (error) {
     console.log(error);
     throw new Error("Failed to add material");
@@ -208,7 +208,7 @@ export async function updateMaterial(
     }
 
     // alert('Ati reusit sa modificati materialul')
-    return { message: "Material updated successfully" };
+    return { message: "Material actualizat cu succes" };
   } catch (error) {
     console.error("Failed to update material:", error);
     throw new Error("Failed to update material");
@@ -231,7 +231,7 @@ export async function deleteMaterial(id: number) {
       return { error: "Material not deleted" };
     }
 
-    return { message: "Material deleted successfully" };
+    return { message: "Material sters cu succes" };
   } catch (error) {
     console.error("Failed to delete material:", error);
     throw new Error("Failed to delete material");
@@ -254,7 +254,7 @@ export async function addRequest(
 
     // console.log(data.rows, 'baa')
 
-    return { message: "Request added successfully", data: data.rows };
+    return { message: "Cerere de oferta realizata cu succes", data: data.rows };
   } catch (error) {
     console.log(error);
     throw new Error("Failed to add request");
@@ -316,7 +316,7 @@ export async function updateRequest(
       return { error: "Material not updated" };
     }
 
-    return { message: "Material updated successfully" };
+    return { message: "Material actualizat cu succes" };
   } catch (error) {
     console.log(error);
     throw new Error("Failed to update request");
@@ -335,7 +335,7 @@ export async function deleteRequest(id: number) {
       return { error: "Request not deleted" };
     }
 
-    return { message: "Material deleted successfully" };
+    return { message: "Material sters cu succes" };
   } catch (error) {
     console.log(error);
     throw new Error("Failed to delete request");
